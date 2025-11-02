@@ -11,6 +11,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif !important;
+            /* Anti-aliasing to smooth the font, overriding any potential system issues */
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
+            text-rendering: optimizeLegibility !important;
+        }
+        /* Soften the strong headings */
+        h1 { font-size: 3.5rem !important; font-weight: 700 !important; }
+        h2 { font-size: 2.2rem !important; font-weight: 600 !important; }
+    </style>
 </head>
 <body class="bg-dark text-light">
 
@@ -41,7 +54,7 @@
 
     <header id="home" class="hero-section text-center d-flex align-items-center" style="min-height: 90vh;">
         <div class="container py-5">
-            <h1 class="display-1 mb-4" style="color: #6cf0ff; text-shadow: 0 0 15px rgba(108, 240, 255, 0.5);">
+            <h1 class="mb-4" style="color: #6cf0ff; text-shadow: 0 0 15px rgba(108, 240, 255, 0.5);">
                 The AI MVP Accelerator.
             </h1>
             <p class="lead mb-5 fs-4 text-white-75">
@@ -54,7 +67,7 @@
 
     <section id="value" class="py-5 bg-black">
         <div class="container">
-            <h2 class="text-center fw-light mb-5" style="color: #6cf0ff;">ELIMINATE THE FRICTION. MAXIMIZE VELOCITY.</h2>
+            <h2 class="text-center mb-5" style="color: #6cf0ff;">ELIMINATE THE FRICTION. MAXIMIZE VELOCITY.</h2>
             <div class="row text-center align-items-center">
                 
                 <div class="col-md-6 mb-4">
@@ -82,7 +95,7 @@
 
     <section id="journey" class="py-5" style="background-color: #0d1a26;">
         <div class="container">
-            <h2 class="text-center fw-bold mb-5 text-white">THE 4-WEEK ACCELERATOR PATH</h2>
+            <h2 class="text-center mb-5 text-white">THE 4-WEEK ACCELERATOR PATH</h2>
             
             <div class="row text-center justify-content-center">
                 
@@ -115,56 +128,4 @@
 
             </div>
             <div class="text-center mt-5">
-                <p class="fs-5 fw-bold text-white-75">Your Time-to-Market is the Metric That Matters Most.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="bg-black py-5">
-        <div class="container">
-            <h2 class="text-center fw-bold mb-5 display-5" style="color: #6cf0ff;">BOOK YOUR ACCELERATOR SESSION.</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-7">
-                    <form action="#" method="POST" class="p-4 rounded-3 shadow-lg" style="background-color: #1a2a35;"> 
-                        <div class="mb-3">
-                            <label for="name" class="form-label text-white">Full Name</label>
-                            <input type="text" class="form-control" id="name" style="background-color: #0d1a26; border-color: #334455;" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label text-white">Work Email</label>
-                            <input type="email" class="form-control" id="email" style="background-color: #0d1a26; border-color: #334455;" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label text-white">Briefly Describe Your Vision / Challenge</label>
-                            <textarea class="form-control" id="message" rows="4" style="background-color: #0d1a26; border-color: #334455;" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100 py-2 fw-bold shadow-sm">Submit Inquiry</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="text-white-50 py-4" style="background-color: #000000;">
-        <div class="container text-center">
-            <small>&copy; 2025 Lumio Studio. All Rights Reserved. | <a href="#" class="text-white-50">Privacy Policy</a></small>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('a[href^="#"]');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+                <p class="fs-5 fw-bold text-white-75">Your Time-to-
