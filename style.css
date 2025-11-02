@@ -95,3 +95,28 @@ section:target {
     margin-top: 0;
 }
 
+/* --- FIX: Softening Display Headings --- */
+
+/* 1. Ensure the main title is refined, not screaming */
+.hero-section h1 {
+    font-size: 3.5rem; /* מקטין את ה-display-1 (שבדרך כלל 6rem) לגודל יותר סולידי */
+    line-height: 1.2;
+    font-weight: 700; /* נשאר בולט, אבל לא צועק */
+}
+
+/* 2. Soften the main section titles */
+#journey h2, #value h2, #contact h2 {
+    font-size: 2.2rem; /* מקטין את כותרות הסקשן הראשיות */
+    font-weight: 600;
+}
+
+/* 3. Soften the smaller card titles */
+.card h3 {
+    font-weight: 700 !important; /* משאיר אותם חזקים אבל קריאים */
+}
+
+/* 4. הסרת כל השפעה של פונט מעוות בכוח: */
+.text-white-75 {
+    /* הוספת font-smoothing גם לטקסט המשני, למקרה שלא נספג */
+    -webkit-font-smoothing: antialiased; 
+}
