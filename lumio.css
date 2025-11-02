@@ -22,7 +22,7 @@ h3 { font-weight: 600 !important; }
 /* --- SCROLLING FIX (MODERN) --- */
 /* This is the magic fix for the sticky header overlap! */
 #value, #journey, #contact, #home {
-    scroll-margin-top: 250px; /* החזרנו ל-100px - אם צריך יותר, נשנה כאן */
+    scroll-margin-top: 200px; /* החזרנו ל-100px - אם צריך יותר, נשנה כאן */
 }
 html {
     scroll-behavior: smooth;
