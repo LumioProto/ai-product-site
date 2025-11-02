@@ -1,19 +1,29 @@
-/* style.css - Premium AI Design */
+/* style.css - Premium AI Design with Softer Fonts (Montserrat) */
 
 /* Set a clean, modern font for the entire site */
 body {
-    font-family: 'Poppins', sans-serif;
-    color: #f8f9fa; /* Light text on dark background */
-    background-color: #000000; /* Ensure the background is truly black */
+    font-family: 'Montserrat', sans-serif;
+    color: #f8f9fa; 
+    background-color: #000000; 
+    
+    /* CRITICAL FIX: Font Smoothing/Rendering */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased; /* Makes the font softer and less 'strong' */
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Primary Color: A sharp, cold light blue (like neon or AI light) */
+/* Base weight for headings (600 is less aggressive than 700/800) */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600; 
+}
+
+/* Primary Color: A sharp, cold light blue (neon) */
 .btn-primary, .bg-primary, .badge-primary {
     --bs-btn-bg: #6cf0ff;
     --bs-btn-border-color: #6cf0ff;
     --bs-btn-hover-bg: #41d2e8;
     --bs-btn-hover-border-color: #41d2e8;
-    --bs-btn-color: #000000; /* Black text on neon buttons */
+    --bs-btn-color: #000000; 
     --bs-badge-bg: #6cf0ff;
 }
 
@@ -28,9 +38,8 @@ body {
     font-weight: 600;
 }
 
-/* Hero Section (Focus is on the HTML styling with the specific light blue) */
+/* Hero Section (Background and Overlay) */
 .hero-section {
-    /* Use a dark, abstract background image for a tech/AI look */
     background: url('https://picsum.photos/1920/1080?random=2&grayscale&blur=2') no-repeat center center;
     background-size: cover;
     position: relative;
@@ -45,7 +54,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.75); /* Darker overlay for dramatic effect */
+    background: rgba(0, 0, 0, 0.75); 
     z-index: 1;
 }
 
@@ -65,8 +74,8 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 .card:hover {
-    transform: translateY(-5px); /* Lift card slightly on hover */
-    box-shadow: 0 10px 20px rgba(108, 240, 255, 0.2) !important; /* Neon shadow effect */
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(108, 240, 255, 0.2) !important; 
 }
 
 /* Adding subtle lines to separate sections for premium feel */
@@ -74,18 +83,14 @@ body {
     border-top: 1px solid rgba(108, 240, 255, 0.1) !important; 
 }
 
-/* --- FIX: Header Overlap for Smooth Scrolling --- */
-/* Target all sections that we link to (using the IDs) */
+/* --- FIX: Header Overlap for Smooth Scrolling (must be at the end) --- */
 section:target {
-    padding-top: 100px; /* Pushes content down by 100px (more than enough for the fixed navbar) */
-    margin-top: -100px; /* Pulls the section up to compensate for the padding */
-    pointer-events: none; /* Prevents unwanted interactions during the scroll */
+    padding-top: 100px; 
+    margin-top: -100px; 
+    pointer-events: none; 
 }
 
-/* Ensure the hero section doesn't get this offset */
 #home:target {
     padding-top: 0;
     margin-top: 0;
 }
-/* ------------------------------------------------ */
-
