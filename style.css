@@ -73,3 +73,19 @@ body {
 #value, #journey, #contact {
     border-top: 1px solid rgba(108, 240, 255, 0.1) !important; 
 }
+
+/* --- FIX: Header Overlap for Smooth Scrolling --- */
+/* Target all sections that we link to (using the IDs) */
+section:target {
+    padding-top: 100px; /* Pushes content down by 100px (more than enough for the fixed navbar) */
+    margin-top: -100px; /* Pulls the section up to compensate for the padding */
+    pointer-events: none; /* Prevents unwanted interactions during the scroll */
+}
+
+/* Ensure the hero section doesn't get this offset */
+#home:target {
+    padding-top: 0;
+    margin-top: 0;
+}
+/* ------------------------------------------------ */
+
