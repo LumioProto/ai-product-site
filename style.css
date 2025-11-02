@@ -1,0 +1,47 @@
+/* style.css */
+
+/* יישור תפריט הניווט לימין */
+.navbar-nav .nav-link {
+    margin-right: 15px; 
+}
+
+/* הגדרות הסקשן הראשי (Hero) */
+.hero-section {
+    /* **שימי לב:** זהו לינק לתמונה אקראית. החליפי אותו בלינק לתמונה מקצועית משלך */
+    background: url('https://picsum.photos/1920/1080?random=1&grayscale') no-repeat center center;
+    background-size: cover;
+    height: 80vh; 
+    position: relative;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); 
+}
+
+/* הצללה כהה על הרקע כדי שהטקסט יבלוט */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+
+/* לוודא שהתוכן מעל השכבה הכהה */
+.hero-section > .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* צבע כפתור ראשי וצבע אייקונים */
+.btn-primary, .bi {
+    background-color: #007bff; /* כחול בסיס */
+    border-color: #007bff;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
