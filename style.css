@@ -1,39 +1,24 @@
-/* style.css - Premium AI Design with Inter Font and Final Fixes */
+/* style.css - Cleaned and Finalized */
 
-/* --- GLOBAL FONT AND RENDERING SETTINGS --- */
+/* --- GLOBAL FONT AND RENDERING SETTINGS (Inter) --- */
 body {
-    font-family: 'Inter', sans-serif;
-    color: #f8f9fa;
+    font-family: 'Inter', sans-serif !important;
+    color: #f8f9fa; 
     background-color: #000000; 
     
-    /* CRITICAL FIX: Font Smoothing and anti-aliasing for smooth look */
+    /* CRITICAL FIX: Font smoothing must be here to make it look elegant */
     text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased; 
+    -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Base style for all headings - softer weight */
+/* Base headings should be normal weight, as the h1/h2 are controlled in HTML */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 600 !important; /* Forces 600 weight, not the harsher 700/800 */
-}
-
-/* --- FIX: SOFTENING THE HERO SECTION HEADING (H1) --- */
-.hero-section h1 {
-    font-size: 3.5rem; /* Reduces the massive 'display-1' size */
-    line-height: 1.2;
-    font-weight: 700 !important; /* Slightly bolder for the main title */
-}
-
-/* FIX: Softening Section Headers (H2) */
-#journey h2, #value h2, #contact h2 {
-    font-size: 2.2rem; /* Reduces the large default size */
-    font-weight: 600 !important;
+    font-weight: 600; 
 }
 
 
 /* --- LAYOUT AND COLORS --- */
-
-/* Primary Color: A sharp, cold light blue (Neon) */
 .btn-primary, .bg-primary, .badge-primary {
     --bs-btn-bg: #6cf0ff;
     --bs-btn-border-color: #6cf0ff;
@@ -42,8 +27,6 @@ h1, h2, h3, h4, h5, h6 {
     --bs-btn-color: #000000; 
     --bs-badge-bg: #6cf0ff;
 }
-
-/* Ensure the neon color for icons and links */
 .text-primary, .bi {
     color: #6cf0ff !important; 
 }
@@ -88,12 +71,12 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 20px rgba(108, 240, 255, 0.2) !important; 
 }
 
-/* Adding subtle lines to separate sections for premium feel */
+/* Section Separators */
 #value, #journey, #contact {
     border-top: 1px solid rgba(108, 240, 255, 0.1) !important; 
 }
 
-/* --- FIX: Header Overlap (Smooth Scrolling) --- */
+/* FIX: Header Overlap (Smooth Scrolling) */
 section:target {
     padding-top: 100px; 
     margin-top: -100px; 
