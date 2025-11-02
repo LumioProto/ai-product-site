@@ -4,6 +4,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     color: #f8f9fa; /* Light text on dark background */
+    background-color: #000000; /* Ensure the background is truly black */
 }
 
 /* Primary Color: A sharp, cold light blue (like neon or AI light) */
@@ -14,18 +15,6 @@ body {
     --bs-btn-hover-border-color: #41d2e8;
     --bs-btn-color: #000000; /* Black text on neon buttons */
     --bs-badge-bg: #6cf0ff;
-}
-
-/* הוסף את הקוד הזה בתחתית קובץ ה-style.css */
-
-/* Dark mode enhancements */
-body.bg-dark {
-    background-color: #000000 !important; /* Make background truly black for high contrast */
-}
-
-/* Add a subtle line to separate sections, enhancing the premium feel */
-#value, #journey, #contact {
-    border-top: 1px solid rgba(108, 240, 255, 0.1) !important; /* A thin, subtle neon blue line */
 }
 
 /* Ensure the dark primary color for icons and links */
@@ -80,3 +69,7 @@ body.bg-dark {
     box-shadow: 0 10px 20px rgba(108, 240, 255, 0.2) !important; /* Neon shadow effect */
 }
 
+/* Adding subtle lines to separate sections for premium feel */
+#value, #journey, #contact {
+    border-top: 1px solid rgba(108, 240, 255, 0.1) !important; 
+}
