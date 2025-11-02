@@ -1,0 +1,86 @@
+/* style.css - Restoration with Softening Fix */
+
+/* --- GLOBAL FONT AND RENDERING SETTINGS (Inter - Softened) --- */
+body {
+    /* Use Inter, which was the best option previously */
+    font-family: 'Inter', sans-serif !important; 
+    color: #f8f9fa; 
+    background-color: #000000; 
+    
+    /* CRITICAL FIX: Force anti-aliasing for smooth look */
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global softening of all headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600 !important; /* Forces a softer weight than the default bold */
+}
+
+/* --- SCROLLING FIX (MODERN) --- */
+/* This is the magic fix for the sticky header overlap! */
+#value, #journey, #contact, #home {
+    scroll-margin-top: 100px;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* --- LAYOUT AND COLORS --- */
+.btn-primary, .bg-primary, .badge-primary {
+    --bs-btn-bg: #6cf0ff;
+    --bs-btn-border-color: #6cf0ff;
+    --bs-btn-hover-bg: #41d2e8;
+    --bs-btn-hover-border-color: #41d2e8;
+    --bs-btn-color: #000000; 
+    --bs-badge-bg: #6cf0ff;
+}
+.text-primary, .bi {
+    color: #6cf0ff !important; 
+}
+
+/* Navigation Links (LTR alignment) */
+.navbar-nav .nav-link {
+    margin-left: 15px; 
+    font-weight: 600;
+}
+
+/* Hero Section Background (The successful background) */
+.hero-section {
+    background: url('https://picsum.photos/1920/1080?random=3&blur=5') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    color: white;
+}
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75); /* Dark overlay */
+    z-index: 1;
+}
+.hero-section > .container {
+    position: relative;
+    z-index: 2;
+}
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Card Styling and Hover Effect */
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(108, 240, 255, 0.2) !important; 
+}
+
+/* Section Separators */
+#value, #journey, #contact {
+    border-top: 1px solid rgba(108, 240, 255, 0.1) !important; 
+}
