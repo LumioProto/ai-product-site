@@ -1,12 +1,13 @@
-/* style.css - Finalized Code (Inter Font, Anti-Aliased, New Background) */
+/* style.css - Finalized System Font Code */
 
-/* --- GLOBAL FONT AND RENDERING SETTINGS (Inter) --- */
+/* --- GLOBAL FONT AND RENDERING SETTINGS (System Font Stack) --- */
 body {
-    font-family: 'Inter', sans-serif !important;
+    /* Use system font stack: clean, modern, and guaranteed to work on every device */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     color: #f8f9fa; 
     background-color: #000000; 
     
-    /* CRITICAL FIX: Font smoothing must be here to make it look elegant */
+    /* Critical: Force anti-aliasing for smooth, professional look */
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale;
@@ -36,9 +37,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
-/* Hero Section Background and Overlay */
+/* Hero Section Background (New Abstract Background) */
 .hero-section {
-    /* NEW BACKGROUND: Abstract digital lines (less 'prison-like') */
     background: url('https://picsum.photos/1920/1080?random=3&blur=5') no-repeat center center;
     background-size: cover;
     position: relative;
@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.75); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.75); 
     z-index: 1;
 }
 .hero-section > .container {
