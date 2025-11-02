@@ -1,5 +1,4 @@
 /* style.css */
-קוד מקורי (style.css),קוד מעודכן (style.css)
 /* יישור תפריט הניווט לימין */,/* Aligning navbar links to the right (standard for LTR) */
 .navbar-nav .nav-link { margin-right: 15px; /* רווח בין פריטי התפריט */ },.navbar-nav .nav-link { margin-left: 15px; } (משנים מ-margin-right ל-margin-left)
 
@@ -44,3 +43,4 @@
     border-color: #0056b3;
 
 }
+
