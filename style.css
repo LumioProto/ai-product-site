@@ -1,23 +1,31 @@
-/* style.css - Cleaned and Finalized for System Font Stack */
+/* style.css - Restoration with Softening Fix */
 
-/* --- GLOBAL FONT AND RENDERING SETTINGS --- */
+/* --- GLOBAL FONT AND RENDERING SETTINGS (Inter - Softened) --- */
 body {
-    /* Set font stack to system fonts (guaranteed to work) */
-    /* יש לוודא שהשורה הזו נמחקה או הוצאה מהקובץ style.css */
-    /* font-family: 'Roboto', sans-serif !important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important; */
+    /* Use Inter, which was the best option previously */
+    font-family: 'Inter', sans-serif !important; 
     color: #f8f9fa; 
     background-color: #000000; 
     
-    /* Critical: Force anti-aliasing for smooth, professional look */
-    text-rendering: optimizeLegibility;
+    /* CRITICAL FIX: Force anti-aliasing for smooth look */
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Base headings weight */
+/* Global softening of all headings */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 600; 
+    font-weight: 600 !important; /* Forces a softer weight than the default bold */
 }
+
+/* --- SCROLLING FIX (MODERN) --- */
+/* This is the magic fix for the sticky header overlap! */
+#value, #journey, #contact, #home {
+    scroll-margin-top: 100px;
+}
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* --- LAYOUT AND COLORS --- */
 .btn-primary, .bg-primary, .badge-primary {
@@ -38,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
-/* Hero Section Background (New Abstract Background) */
+/* Hero Section Background (The successful background) */
 .hero-section {
     background: url('https://picsum.photos/1920/1080?random=3&blur=5') no-repeat center center;
     background-size: cover;
@@ -52,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.75); 
+    background: rgba(0, 0, 0, 0.75); /* Dark overlay */
     z-index: 1;
 }
 .hero-section > .container {
@@ -76,16 +84,3 @@ h1, h2, h3, h4, h5, h6 {
 #value, #journey, #contact {
     border-top: 1px solid rgba(108, 240, 255, 0.1) !important; 
 }
-
-/* FIX: Header Overlap (Smooth Scrolling) */
-section:target {
-    padding-top: 100px; 
-    margin-top: -100px; 
-    pointer-events: none; 
-}
-
-#home:target {
-    padding-top: 0;
-    margin-top: 0;
-}
-
