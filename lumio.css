@@ -3,7 +3,7 @@
 /* --- GLOBAL FONT AND RENDERING SETTINGS (System Font Stack) --- */
 body {
     /* Use system font stack: clean, modern, guaranteed to work on every device */
-    font-family: "OSLO", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-family: "OSLO" !important;
     color: #f8f9fa; 
     background-color: #000000; 
     
