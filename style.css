@@ -3,7 +3,8 @@
 /* --- GLOBAL FONT AND RENDERING SETTINGS --- */
 body {
     /* Set font stack to system fonts (guaranteed to work) */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    /* יש לוודא שהשורה הזו נמחקה או הוצאה מהקובץ style.css */
+    /* font-family: 'Roboto', sans-serif !important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important; */
     color: #f8f9fa; 
     background-color: #000000; 
     
@@ -87,3 +88,4 @@ section:target {
     padding-top: 0;
     margin-top: 0;
 }
+
