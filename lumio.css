@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --- SCROLLING FIX (MODERN) --- */
 #value, #journey, #contact, #home {
-    scroll-margin-top: 180px; /* התיקון שלך (מבטיח רווח של 180px מעל הכותרת) */
+    scroll-margin-top: 50px; /* התיקון שלך (מבטיח רווח של 180px מעל הכותרת) */
 }
 html {
     scroll-behavior: smooth; /* זה הופך את הקפיצה לחלקה */
