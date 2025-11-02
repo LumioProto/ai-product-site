@@ -3,7 +3,7 @@
 /* Alignment for the Navigation Bar (LTR: links move left) */
 .navbar-nav .nav-link {
     margin-left: 15px; 
-    /* We use margin-left here to create space between the links */
+    /* We use margin-left to create space between the links in LTR */
 }
 
 /* Hero Section Settings */
