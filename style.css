@@ -1,19 +1,23 @@
-/* style.css */
-/* יישור תפריט הניווט לימין */,/* Aligning navbar links to the right (standard for LTR) */
-.navbar-nav .nav-link { margin-right: 15px; /* רווח בין פריטי התפריט */ },.navbar-nav .nav-link { margin-left: 15px; } (משנים מ-margin-right ל-margin-left)
+/* style.css - Full Code for English (LTR) Version */
 
-/* הגדרות הסקשן הראשי (Hero) */
-.hero-section {
-    /* **שימי לב:** זהו לינק לתמונה אקראית. החליפי אותו בלינק לתמונה מקצועית משלך */
-    background: url('https://picsum.photos/1920/1080?random=1&grayscale') no-repeat center center;
-    background-size: cover;
-    height: 80vh; 
-    position: relative;
-    color: white;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); 
+/* Alignment for the Navigation Bar (LTR: links move left) */
+.navbar-nav .nav-link {
+    margin-left: 15px; 
+    /* We use margin-left here to create space between the links */
 }
 
-/* הצללה כהה על הרקע כדי שהטקסט יבלוט */
+/* Hero Section Settings */
+.hero-section {
+    /* Background Image - Replace this link with your own professional image */
+    background: url('https://picsum.photos/1920/1080?random=1&grayscale') no-repeat center center;
+    background-size: cover;
+    height: 80vh; /* 80% of the viewport height */
+    position: relative;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Shadow to make text pop */
+}
+
+/* Dark overlay for better text readability */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -21,19 +25,19 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.5); /* 50% opacity black layer */
     z-index: 1;
 }
 
-/* לוודא שהתוכן מעל השכבה הכהה */
+/* Ensure content stays above the dark layer */
 .hero-section > .container {
     position: relative;
     z-index: 2;
 }
 
-/* צבע כפתור ראשי וצבע אייקונים */
+/* Primary Button and Icon Styling (Lumio brand color) */
 .btn-primary, .bi {
-    background-color: #007bff; /* כחול בסיס */
+    background-color: #007bff; /* A standard professional blue */
     border-color: #007bff;
     transition: background-color 0.3s;
 }
@@ -41,6 +45,4 @@
 .btn-primary:hover {
     background-color: #0056b3;
     border-color: #0056b3;
-
 }
-
