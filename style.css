@@ -16,6 +16,18 @@ body {
     --bs-badge-bg: #6cf0ff;
 }
 
+/* הוסף את הקוד הזה בתחתית קובץ ה-style.css */
+
+/* Dark mode enhancements */
+body.bg-dark {
+    background-color: #000000 !important; /* Make background truly black for high contrast */
+}
+
+/* Add a subtle line to separate sections, enhancing the premium feel */
+#value, #journey, #contact {
+    border-top: 1px solid rgba(108, 240, 255, 0.1) !important; /* A thin, subtle neon blue line */
+}
+
 /* Ensure the dark primary color for icons and links */
 .text-primary, .bi {
     color: #6cf0ff !important; 
@@ -67,3 +79,4 @@ body {
     transform: translateY(-5px); /* Lift card slightly on hover */
     box-shadow: 0 10px 20px rgba(108, 240, 255, 0.2) !important; /* Neon shadow effect */
 }
+
