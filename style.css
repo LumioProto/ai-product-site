@@ -1,23 +1,39 @@
-/* style.css - Premium AI Design with Softer Fonts (Montserrat) */
+/* style.css - Premium AI Design with Inter Font and Final Fixes */
 
-/* Set a clean, modern font for the entire site */
+/* --- GLOBAL FONT AND RENDERING SETTINGS --- */
 body {
     font-family: 'Inter', sans-serif;
-    color: #f8f9fa; 
+    color: #f8f9fa;
     background-color: #000000; 
     
-    /* CRITICAL FIX: Font Smoothing/Rendering */
+    /* CRITICAL FIX: Font Smoothing and anti-aliasing for smooth look */
     text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased; /* Makes the font softer and less 'strong' */
+    -webkit-font-smoothing: antialiased; 
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Base weight for headings (600 is less aggressive than 700/800) */
+/* Base style for all headings - softer weight */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 600; 
+    font-weight: 600 !important; /* Forces 600 weight, not the harsher 700/800 */
 }
 
-/* Primary Color: A sharp, cold light blue (neon) */
+/* --- FIX: SOFTENING THE HERO SECTION HEADING (H1) --- */
+.hero-section h1 {
+    font-size: 3.5rem; /* Reduces the massive 'display-1' size */
+    line-height: 1.2;
+    font-weight: 700 !important; /* Slightly bolder for the main title */
+}
+
+/* FIX: Softening Section Headers (H2) */
+#journey h2, #value h2, #contact h2 {
+    font-size: 2.2rem; /* Reduces the large default size */
+    font-weight: 600 !important;
+}
+
+
+/* --- LAYOUT AND COLORS --- */
+
+/* Primary Color: A sharp, cold light blue (Neon) */
 .btn-primary, .bg-primary, .badge-primary {
     --bs-btn-bg: #6cf0ff;
     --bs-btn-border-color: #6cf0ff;
@@ -27,26 +43,24 @@ h1, h2, h3, h4, h5, h6 {
     --bs-badge-bg: #6cf0ff;
 }
 
-/* Ensure the dark primary color for icons and links */
+/* Ensure the neon color for icons and links */
 .text-primary, .bi {
     color: #6cf0ff !important; 
 }
 
-/* Navigation Links (standard LTR alignment) */
+/* Navigation Links (LTR alignment) */
 .navbar-nav .nav-link {
     margin-left: 15px; 
     font-weight: 600;
 }
 
-/* Hero Section (Background and Overlay) */
+/* Hero Section Background and Overlay */
 .hero-section {
     background: url('https://picsum.photos/1920/1080?random=2&grayscale&blur=2') no-repeat center center;
     background-size: cover;
     position: relative;
     color: white;
 }
-
-/* Subtle Dark Overlay to ensure text readability */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -57,19 +71,15 @@ h1, h2, h3, h4, h5, h6 {
     background: rgba(0, 0, 0, 0.75); 
     z-index: 1;
 }
-
-/* Ensure content stays above the dark layer */
 .hero-section > .container {
     position: relative;
     z-index: 2;
 }
-
-/* Adjust text color for contrast against dark background */
 .text-white-75 {
     color: rgba(255, 255, 255, 0.85) !important;
 }
 
-/* Styling for the cards in the Journey section */
+/* Card Styling and Hover Effect */
 .card {
     transition: transform 0.3s ease-in-out;
 }
@@ -83,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 1px solid rgba(108, 240, 255, 0.1) !important; 
 }
 
-/* --- FIX: Header Overlap for Smooth Scrolling (must be at the end) --- */
+/* --- FIX: Header Overlap (Smooth Scrolling) --- */
 section:target {
     padding-top: 100px; 
     margin-top: -100px; 
@@ -93,30 +103,4 @@ section:target {
 #home:target {
     padding-top: 0;
     margin-top: 0;
-}
-
-/* --- FIX: Softening Display Headings --- */
-
-/* 1. Ensure the main title is refined, not screaming */
-.hero-section h1 {
-    font-size: 3.5rem; /* מקטין את ה-display-1 (שבדרך כלל 6rem) לגודל יותר סולידי */
-    line-height: 1.2;
-    font-weight: 700; /* נשאר בולט, אבל לא צועק */
-}
-
-/* 2. Soften the main section titles */
-#journey h2, #value h2, #contact h2 {
-    font-size: 2.2rem; /* מקטין את כותרות הסקשן הראשיות */
-    font-weight: 600;
-}
-
-/* 3. Soften the smaller card titles */
-.card h3 {
-    font-weight: 700 !important; /* משאיר אותם חזקים אבל קריאים */
-}
-
-/* 4. הסרת כל השפעה של פונט מעוות בכוח: */
-.text-white-75 {
-    /* הוספת font-smoothing גם לטקסט המשני, למקרה שלא נספג */
-    -webkit-font-smoothing: antialiased; 
 }
