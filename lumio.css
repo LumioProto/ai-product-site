@@ -86,3 +86,69 @@ html {
 #value, #journey, #contact {
     border-top: 1px solid rgba(108, 240, 255, 0.1) !important; 
 }
+
+
+/* --- סקשן יצירת קשר (LET'S TALK) --- */
+
+.contact-section {
+    background-color: #121212; /* רקע כהה מאוד */
+    color: #fff; /* צבע טקסט לבן */
+    padding: 60px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif; /* או הפונט שבשימוש באתר */
+}
+
+.contact-title {
+    font-size: 3em; /* גודל כותרת גדולה */
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+/* קו אדום מפריד */
+.separator-line {
+    width: 200px; /* רוחב הקו */
+    height: 2px;
+    background-color: #ff0000; /* צבע אדום חזק */
+    margin: 0 auto 40px auto; /* מרכז את הקו */
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center; /* מרכז את פרטי הקשר */
+    flex-wrap: wrap; /* שובר שורה במסכים קטנים */
+    gap: 50px; /* רווח בין האימייל לטלפון */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    color: #a0a0a0; /* צבע אפור בהיר לפרטים */
+}
+
+.contact-item .icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.contact-item a {
+    color: #a0a0a0; /* צבע אפור לקישורים */
+    text-decoration: none; /* הסרת קו תחתון מקישור */
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: #fff; /* צבע לבן בריחוף (hover) */
+}
+
+/* התאמה למסכים קטנים יותר */
+@media (max-width: 600px) {
+    .contact-title {
+        font-size: 2.5em;
+    }
+    .contact-details {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
