@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>הנתיב ל-MVP ב-4 שבועות - Lumio Studio</title>
+    <title>The 4-Week MVP Path - Lumio Studio</title>
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Montserrat לניאון -->
+    <!-- Montserrat Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    <!-- קובץ CSS מותאם אישית (כדי לכלול את lumio.css) -->
+    <!-- Custom CSS (lumio.css) -->
     <link rel="stylesheet" href="lumio.css">
     
     <style>
-        /* סגנונות ספציפיים לדף ה-Path */
+        /* Specific Styles for the 4-Week Path Page */
         body {
-            background-color: #0d1a26; /* רקע כהה תואם Navbar */
+            background-color: #0d1a26; /* Dark background matching the Navbar */
             color: #E0E0E0;
             font-family: 'Montserrat', sans-serif;
             line-height: 1.7;
@@ -26,14 +26,14 @@
             padding: 80px 5% 50px;
             max-width: 1200px;
             margin: auto;
-            text-align: right;
+            text-align: left;
         }
 
-        /* כותרות ניאון */
+        /* Neon Headers */
         .neon-header {
             font-size: 3.5rem;
             font-weight: 900;
-            color: #6cf0ff; /* צבע ניאון כחול */
+            color: #6cf0ff; /* Neon Cyan Color */
             text-shadow: 0 0 15px rgba(108, 240, 255, 0.5); 
             margin-bottom: 20px;
             letter-spacing: 1.5px;
@@ -48,17 +48,17 @@
             border-bottom: 2px solid #6cf0ff;
             padding-bottom: 10px;
             display: inline-block;
-            text-align: right;
+            text-align: left;
         }
 
-        /* טבלת השוואה */
+        /* Comparison Table */
         .comparison-table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 0 10px;
             margin: 40px 0;
             font-size: 1.1em;
-            text-align: right;
+            text-align: center;
         }
 
         .comparison-table th, .comparison-table td {
@@ -71,20 +71,21 @@
             background-color: rgba(108, 240, 255, 0.2);
             color: #6cf0ff;
             font-weight: 700;
-            text-align: right;
+            text-align: center;
             border-bottom: 3px solid #6cf0ff;
         }
         
         .comparison-table td:first-child {
             font-weight: bold;
             color: #FFFFFF;
+            text-align: left;
         }
         
-        /* שלבי ה-4 שבועות */
+        /* 4-Week Cards */
         .week-card {
             background-color: #1a2a35;
             border: 1px solid rgba(108, 240, 255, 0.1);
-            border-top: 5px solid #6cf0ff; /* קו ניאון עבה למעלה */
+            border-top: 5px solid #6cf0ff; /* Neon top border */
             height: 100%;
             box-shadow: 0 0 15px rgba(108, 240, 255, 0.15);
         }
@@ -102,12 +103,6 @@
             font-size: 1.4rem;
         }
 
-        .week-card .badge {
-            background-color: #6cf0ff !important;
-            color: #121212;
-            font-weight: 900;
-        }
-
         .cta-box {
             background-color: #1a2a35;
             border: 1px solid #6cf0ff;
@@ -116,21 +111,11 @@
             margin-top: 50px;
             text-align: center;
         }
-
-        /* התאמה ל-RTL בתוך הטקסט האנגלי (כדי שהטבלה תיראה נכון) */
-        @media (min-width: 768px) {
-            .comparison-table th, .comparison-table td {
-                text-align: center;
-            }
-            .comparison-table td:first-child {
-                text-align: right;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <!-- יש לשלב כאן את קוד סרגל הניווט (Navbar) של האתר שלך -->
+    <!-- Navbar Structure (Matching index.html) -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #0d1a26;">
         <div class="container">
             <a class="navbar-brand" href="index.html"><img src="logo1.png" alt="Lumio Studio Logo" style="height: 40px;"></a>
@@ -158,88 +143,91 @@
 
     <div class="main-content">
 
-        <h1 class="neon-header">הנתיב ל-MVP ב-4 שבועות</h1>
-        <p class="subtitle text-center fs-4">אנו ממירים חזון לאבטיפוס (MVP) מקודד ומוכן לשוק **במהירות שיא**, תוך שימוש בבינה מלאכותית גנרטיבית (Generative AI) ומתודולוגיית עיצוב חכמה.</p>
+        <h1 class="neon-header">The 4-Week MVP Path to Code.</h1>
+        <p class="subtitle text-center fs-4">We bridge the gap from Vision to a fully-coded, market-ready Prototype in **record time**, leveraging Generative AI and intelligent design methodologies.</p>
 
-        <!-- סקשן השוואה -->
+        <!-- Risk Avoidance Section -->
         <div class="my-5">
-            <h2 class="section-title">הימנעות מסיכונים ועיכובים</h2>
-            <p>השולחן הבא מציג את הערך המרכזי של מודל ה-Accelerator שלנו, מול שיטת הפיתוח המסורתית:</p>
+            <h2 class="section-title">De-Risking Your Project & Avoiding Delays</h2>
+            <p>Our Accelerator model provides fixed outcomes and certainty, drastically reducing the risks associated with traditional development:</p>
 
             <table class="comparison-table">
                 <thead>
                     <tr>
-                        <th style="text-align: right;">מרכיב הערך</th>
-                        <th>Lumio Studio (המאיץ)</th>
-                        <th>שיטת הפיתוח הקלאסית</th>
+                        <th style="text-align: left;">Value Component</th>
+                        <th>Lumio Studio (The Accelerator)</th>
+                        <th>Classic Development Method</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>**ציר זמן להשקה**</td><td>**4 שבועות קבועים** (MVP בסיסי)</td><td>3-6 חודשים (ובדרך כלל יותר)</td></tr>
-                    <tr><td>**מודל תמחור**</td><td>**תשלום קבוע (Fixed Fee)** לאחר שלב אפיון</td><td>Time & Materials (לפי שעות), תנודתי</td></tr>
-                    <tr><td>**שלב אפיון**</td><td>שעתיים ממוקדות / תשלום סמלי</td><td>חודש-חודשיים אפיון מלא ויקר</td></tr>
-                    <tr><td>**סיכון חריגה מתקציב**</td><td>**אפס** (המחיר סגור מראש)</td><td>גבוה מאוד (עלול להכפיל את העלות)</td></tr>
-                    <tr><td>**תוצר סופי**</td><td>קוד מקור עובד ודוח "המשך" (Scale)</td><td>מסמכי אפיון ו-UI/UX בלבד (בדרך כלל)</td></tr>
+                    <tr><td>**Time-to-Launch**</td><td>**4 Weeks Fixed** (Core MVP)</td><td>3–6 Months (Often more due to scope creep)</td></tr>
+                    <tr><td>**Pricing Model**</td><td>**Fixed Fee** after Discovery Phase</td><td>Time & Materials (Hourly), highly variable</td></tr>
+                    <tr><td>**Discovery Phase Cost**</td><td>Focused 2-hour Session / Small Fixed Fee</td><td>1-2 Months of Full, Expensive Analysis</td></tr>
+                    <tr><td>**Risk of Budget Overrun**</td><td>**Zero** (Price is fixed upfront)</td><td>Very High (can double original estimates)</td></tr>
+                    <tr><td>**Final Deliverable**</td><td>Working Source Code and Scale-Up Report</td><td>Often just requirement documents and wireframes</td></tr>
                 </tbody>
             </table>
         </div>
         
-        <!-- סקשן פירוט שבועי -->
-        <h2 class="section-title text-center">מפת הדרך השבועית</h2>
-        <p class="text-center text-white-50 fs-5">התהליך המדויק שלנו לשחרור ה-MVP שלך לשוק במהירות ובדיוק.</p>
+        <!-- Weekly Breakdown Section -->
+        <h2 class="section-title text-center">The Accelerated Weekly Roadmap</h2>
+        <p class="text-center text-white-50 fs-5">Our precise process ensures your MVP is market-ready with speed and accuracy.</p>
         
         <div class="row text-center mt-5">
             
-            <!-- שבוע 1 -->
+            <!-- Week 1 -->
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="p-4 week-card">
                     <i class="bi bi-rocket-fill"></i>
-                    <h3 class="fw-bold">שבוע 1: יסודות ואסטרטגיה</h3>
-                    <p class="text-white-50">אימות הרעיון באמצעות AI, מיפוי סיכונים (Pitfall Audit) וגיבוש לוגיקת הליבה של ה-MVP. הקמת תשתית הקוד הבסיסית.</p>
+                    <h3 class="fw-bold">Week 1: Foundation & Strategy</h3>
+                    <p class="text-white-50">AI-driven concept validation, Pitfall Audit, and finalization of core MVP logic. Establishing the foundational code infrastructure.</p>
                 </div>
             </div>
             
-            <!-- שבוע 2 -->
+            <!-- Week 2 -->
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="p-4 week-card">
                     <i class="bi bi-palette-fill"></i>
-                    <h3 class="fw-bold">שבוע 2: עיצוב חכם ו-UX</h3>
-                    <p class="text-white-50">יצירת חווית משתמש (UX) וממשק משתמש (UI) מונעי-AI. שימוש ב-Generative Design כדי ליצור Blueprint אינטראקטיבי ומהיר.</p>
+                    <h3 class="fw-bold">Week 2: Smart Design & UX</h3>
+                    <p class="text-white-50">Creation of AI-powered UX/UI and Design System. Your idea becomes a smart, interactive, high-fidelity blueprint.</p>
                 </div>
             </div>
             
-            <!-- שבוע 3 -->
+            <!-- Week 3 -->
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="p-4 week-card">
                     <i class="bi bi-code-slash"></i>
-                    <h3 class="fw-bold">שבוע 3: קידוד AI מואץ</h3>
-                    <p class="text-white-50">AI גנרטיבי ממיר את העיצוב לקוד Front-end נקי ו-Scalable. אינטגרציה ראשונית של מודלי AI מותאמים אישית.</p>
+                    <h3 class="fw-bold">Week 3: AI Code Execution</h3>
+                    <p class="text-white-50">Generative AI converts the design into clean, scalable Front-end code. Initial integration of custom AI models and core features.</p>
                 </div>
             </div>
             
-            <!-- שבוע 4 -->
+            <!-- Week 4 -->
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="p-4 week-card">
                     <i class="bi bi-check-circle-fill"></i>
-                    <h3 class="fw-bold">שבוע 4: מסירה והשקה</h3>
-                    <p class="text-white-50">בדיקות איכות (QA) מקיפות, תיקוני באגים סופיים, אופטימיזציה, ומסירת קוד המקור המלא וה-MVP הסופי.</p>
+                    <h3 class="fw-bold">Week 4: Delivery & Launch Prep</h3>
+                    <p class="text-white-50">Comprehensive QA testing, final bug fixes, performance optimization, and handover of full source code and final MVP.</p>
                 </div>
             </div>
             
         </div>
         
-        <!-- קטע פעולה (CTA) -->
+        <!-- Call to Action (CTA) -->
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="cta-box">
-                    <h3 class="text-white fw-bold">מוכנים לזנק קדימה?</h3>
-                    <p class="text-white-50 fs-5">התחילו בתהליך הגילוי הממוקד (שלב 1) כדי לקבל תוכנית עבודה מוגדרת מראש וצעד ראשון בטוח.</p>
-                    <a href="index.html#contact" class="btn btn-lg btn-primary primary-cta mt-3">קבעו פגישת אסטרטגיה (Strategy Session)</a>
+                    <h3 class="text-white fw-bold">Ready to Accelerate?</h3>
+                    <p class="text-white-50 fs-5">Start with our focused Discovery process (Step 1) to get a defined work plan and a secure first step forward.</p>
+                    <a href="index.html#contact" class="btn btn-lg btn-primary primary-cta mt-3">Book Your Strategy Session</a>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <!-- הוספת סקריפט Bootstrap בסוף הדף -->
-    <script src="
+    <!-- Add Bootstrap script at the end of the page -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
