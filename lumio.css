@@ -152,3 +152,87 @@ html {
         gap: 20px;
     }
 }
+
+/*
+ * ------------------------------------------------------------------
+ * CSS עבור רובריקת יצירת קשר (LET'S TALK) - בהתאם לדרישות הניאון
+ * ------------------------------------------------------------------
+ */
+
+.contact-section {
+    /* צבע רקע כהה לשמירה על ניגודיות */
+    background-color: #1a1a1a; 
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* וודא שהפונט Montserrat נטען עבור חלק זה בלבד */
+.contact-section * {
+    font-family: 'Montserrat', sans-serif !important; 
+}
+
+/* הכותרת LET'S TALK */
+.contact-title {
+    font-size: 3em; 
+    font-weight: 900; /* משקל שחור, הכי עבה */
+    color: #FFFFFF; /* לבן חזק */
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* קו מפריד עם אפקט ניאון */
+.separator-line {
+    width: 200px; 
+    height: 2px;
+    background-color: #00FFFF; /* צבע ליבת הניאון כחול-ציאן */
+    margin: 0 auto 40px auto; 
+    
+    /* אפקט זוהר ניאון */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 
+                0 0 20px rgba(0, 255, 255, 0.4); 
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 50px; 
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: 400; /* משקל רגיל לפרטים */
+}
+
+/* קישורי האימייל והטלפון */
+.contact-item a {
+    color: #A0A0A0; /* צבע אפור נייטרלי לטקסט */
+    text-decoration: none; 
+    transition: color 0.3s;
+}
+
+/* עיצוב האייקונים (כחול ניאון) */
+.contact-item .icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+    color: #00FFFF; /* צבע ניאון כחול לאייקונים */
+}
+
+/* אפקט ריחוף (Hover) */
+.contact-item a:hover {
+    color: #00FFFF; /* צבע ניאון בריחוף */
+}
+
+/* התאמה למובייל */
+@media (max-width: 600px) {
+    .contact-title {
+        font-size: 2.5em;
+    }
+    .contact-details {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
