@@ -236,3 +236,37 @@ html {
         gap: 20px;
     }
 }
+
+/* --- סגנונות כרטיסיות ה-4 שבועות (Week Cards) --- */
+
+.week-card {
+    background-color: #1a2a35;
+    border: 1px solid rgba(108, 240, 255, 0.1);
+    border-top: 5px solid #6cf0ff; /* קו ניאון עבה למעלה */
+    height: 100%;
+    box-shadow: 0 0 15px rgba(108, 240, 255, 0.15); /* זוהר קל */
+}
+
+.week-card i {
+    color: #6cf0ff;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #6cf0ff; /* אפקט ניאון לאייקון */
+}
+
+.week-card h3 {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.week-card p {
+    color: #E0E0E0; /* צבע טקסט בהיר יותר בפנים */
+}
+
+/* אם השתמשת ב-badge: */
+.week-card .badge {
+    background-color: #6cf0ff !important;
+    color: #121212;
+    font-weight: 900;
+}
