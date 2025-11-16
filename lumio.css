@@ -50,7 +50,7 @@ html {
 /* --- FIX: PULLING NAVBAR CONTENT INWARD --- */
 /* מגדיר רוחב מקסימלי למיכל התפריט כדי למשוך את הלוגו והקישורים פנימה */
 .navbar .container {
-    max-width: 50% !important; /* מגביל את הרוחב ל-90% ומכניס את התפריט פנימה */
+    max-width: 85% !important; /* מגביל את הרוחב ל-90% ומכניס את התפריט פנימה */
 }
 
 /* Hero Section Background and Overlay */
