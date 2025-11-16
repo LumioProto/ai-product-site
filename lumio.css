@@ -21,7 +21,7 @@ h3 { font-weight: 600 !important; }
 
 /* --- SCROLLING FIX (MODERN) --- */
 #value, #journey, #contact, #home {
-    scroll-margin-top: 57px; /* ערך בטוח שצריך לעבוד לאחר ניקוי ה-HTML */
+    scroll-margin-top: 65px; /* ערך בטוח שצריך לעבוד לאחר ניקוי ה-HTML */
 }
 html {
     scroll-behavior: smooth;
