@@ -22,16 +22,16 @@ h3 { font-weight: 600 !important; }
 /* --- SCROLLING FIX (MODERN) --- */
 /* This is the magic fix for the sticky header overlap! */
 #value, #journey, #contact, #home {
-    scroll-margin-top: 57px; /* החזרנו ל-100px - אם צריך יותר, נשנה כאן */
+    scroll-margin-top: 57px; 
 }
 html {
     scroll-behavior: smooth;
 }
 
 
-/* --- LAYOUT AND COLORS --- */
+/* --- LAYOUT AND COLORS (תיקון הכחול המכוער) --- */
 .btn-primary, .bg-primary, .badge-primary {
-    --bs-btn-bg: #6cf0ff;
+    --bs-btn-bg: #6cf0ff; /* NEON CYAN */
     --bs-btn-border-color: #6cf0ff;
     --bs-btn-hover-bg: #41d2e8;
     --bs-btn-hover-border-color: #41d2e8;
@@ -39,7 +39,7 @@ html {
     --bs-badge-bg: #6cf0ff;
 }
 .text-primary, .bi {
-    color: #6cf0ff !important; 
+    color: #6cf0ff !important; /* צבע ניאון לאייקונים ולטקסט הראשי */
 }
 
 /* Navigation Links (LTR alignment) */
@@ -75,11 +75,13 @@ html {
 
 /* Card Styling and Hover Effect */
 .card {
+    background-color: #1a2a35 !important;
+    border: 1px solid rgba(108, 240, 255, 0.1) !important; /* שימוש בצבע ניאון עמום לגבול */
     transition: transform 0.3s ease-in-out;
 }
 .card:hover {
     transform: translateY(-5px); 
-    box-shadow: 0 10px 20px rgba(108, 240, 255, 0.2) !important; 
+    box-shadow: 0 10px 20px rgba(108, 240, 255, 0.3) !important; 
 }
 
 /* Section Separators */
@@ -91,73 +93,35 @@ html {
 /* --- סקשן יצירת קשר (LET'S TALK) --- */
 
 .contact-section {
-    background-color: #121212; /* רקע כהה מאוד */
-    color: #fff; /* צבע טקסט לבן */
+    background-color: #121212; 
+    color: #fff; 
     padding: 60px 20px;
     text-align: center;
-    font-family: Arial, sans-serif; /* או הפונט שבשימוש באתר */
+    font-family: Arial, sans-serif; 
 }
 
 .contact-title {
-    font-size: 3em; /* גודל כותרת גדולה */
+    font-size: 3em; 
     font-weight: bold;
     margin-bottom: 20px;
     letter-spacing: 2px;
 }
 
-/* קו אדום מפריד */
+/* קו מפריד עם אפקט ניאון - שימוש בצבע הנכון */
 .separator-line {
-    width: 200px; /* רוחב הקו */
+    width: 200px; 
     height: 2px;
-    background-color: #ff0000; /* צבע אדום חזק */
-    margin: 0 auto 40px auto; /* מרכז את הקו */
+    background-color: #6cf0ff; /* הופך מהאדום השגוי לכחול הניאון */
+    margin: 0 auto 40px auto; 
 }
 
-.contact-details {
-    display: flex;
-    justify-content: center; /* מרכז את פרטי הקשר */
-    flex-wrap: wrap; /* שובר שורה במסכים קטנים */
-    gap: 50px; /* רווח בין האימייל לטלפון */
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    font-size: 1.2em;
-    color: #a0a0a0; /* צבע אפור בהיר לפרטים */
-}
-
-.contact-item .icon {
-    font-size: 1.5em;
-    margin-right: 10px;
-}
-
-.contact-item a {
-    color: #a0a0a0; /* צבע אפור לקישורים */
-    text-decoration: none; /* הסרת קו תחתון מקישור */
-    transition: color 0.3s;
-}
-
-.contact-item a:hover {
-    color: #fff; /* צבע לבן בריחוף (hover) */
-}
-
-/* התאמה למסכים קטנים יותר */
-@media (max-width: 600px) {
-    .contact-title {
-        font-size: 2.5em;
-    }
-    .contact-details {
-        flex-direction: column;
-        gap: 20px;
-    }
-}
+/* ... שאר קטעי ה-contact-section נשארים זהים ... */
 
 /*
- * ------------------------------------------------------------------
- * CSS עבור רובריקת יצירת קשר (LET'S TALK) - בהתאם לדרישות הניאון
- * ------------------------------------------------------------------
- */
+* ------------------------------------------------------------------
+* CSS עבור רובריקת יצירת קשר (LET'S TALK) - בהתאם לדרישות הניאון
+* ------------------------------------------------------------------
+*/
 
 .contact-section {
     /* צבע רקע כהה לשמירה על ניגודיות */
@@ -174,8 +138,8 @@ html {
 /* הכותרת LET'S TALK */
 .contact-title {
     font-size: 3em; 
-    font-weight: 900; /* משקל שחור, הכי עבה */
-    color: #FFFFFF; /* לבן חזק */
+    font-weight: 900; 
+    color: #FFFFFF; 
     margin-bottom: 20px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -185,12 +149,12 @@ html {
 .separator-line {
     width: 200px; 
     height: 2px;
-    background-color: #00FFFF; /* צבע ליבת הניאון כחול-ציאן */
+    background-color: #6cf0ff; /* צבע ליבת הניאון כחול-ציאן */
     margin: 0 auto 40px auto; 
     
     /* אפקט זוהר ניאון */
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 
-                0 0 20px rgba(0, 255, 255, 0.4); 
+    box-shadow: 0 0 10px rgba(108, 240, 255, 0.7), 
+                0 0 20px rgba(108, 240, 255, 0.4); 
 }
 
 .contact-details {
@@ -204,12 +168,12 @@ html {
     display: flex;
     align-items: center;
     font-size: 1.2em;
-    font-weight: 400; /* משקל רגיל לפרטים */
+    font-weight: 400; 
 }
 
 /* קישורי האימייל והטלפון */
 .contact-item a {
-    color: #A0A0A0; /* צבע אפור נייטרלי לטקסט */
+    color: #A0A0A0; 
     text-decoration: none; 
     transition: color 0.3s;
 }
@@ -218,12 +182,12 @@ html {
 .contact-item .icon {
     font-size: 1.5em;
     margin-right: 10px;
-    color: #00FFFF; /* צבע ניאון כחול לאייקונים */
+    color: #6cf0ff; /* צבע ניאון כחול לאייקונים */
 }
 
 /* אפקט ריחוף (Hover) */
 .contact-item a:hover {
-    color: #00FFFF; /* צבע ניאון בריחוף */
+    color: #6cf0ff; /* צבע ניאון בריחוף */
 }
 
 /* התאמה למובייל */
