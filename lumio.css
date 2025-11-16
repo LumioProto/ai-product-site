@@ -47,6 +47,12 @@ html {
     font-weight: 600;
 }
 
+/* --- FIX: PULLING NAVBAR CONTENT INWARD --- */
+/* מגדיר רוחב מקסימלי למיכל התפריט כדי למשוך את הלוגו והקישורים פנימה */
+.navbar .container {
+    max-width: 85% !important; /* מגביל את הרוחב ל-90% ומכניס את התפריט פנימה */
+}
+
 /* Hero Section Background and Overlay */
 .hero-section {
     background: url('https://picsum.photos/1920/1080?random=3&blur=5') no-repeat center center;
