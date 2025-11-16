@@ -1,279 +1,89 @@
-/* lumio.css - Final Code (System Font Stack, Smooth) */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumio Certitude Lab | The Axiom Method: Vision to High-Conviction Conversion</title>
 
-/* --- GLOBAL FONT AND RENDERING SETTINGS (System Font Stack) --- */
-body {
-    /* Use system font stack: clean, modern, guaranteed to work on every device */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-    color: #f8f9fa; 
-    background-color: #000000; 
-    
-    /* Critical: Force anti-aliasing for smooth, professional look */
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-osx-font-smoothing: grayscale;
-    font-size: 0.95rem; /* הקטנת פונט בסיסי לכל הטקסט (הכיתוב הקטן יותר) */
-}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-/* Base headings weight and sizing */
-h1 { font-size: 3.5rem !important; font-weight: 700 !important; }
-h2 { font-size: 2.2rem !important; font-weight: 600 !important; }
-h3 { font-weight: 600 !important; }
+    <link rel="stylesheet" href="lumio.css"> 
+</head>
+<body class="bg-dark text-light">
 
-/* --- SCROLLING FIX (MODERN) --- */
-/* This is the magic fix for the sticky header overlap! */
-#value, #journey, #contact, #home {
-    scroll-margin-top: 57px; /* החזרנו ל-100px - אם צריך יותר, נשנה כאן */
-}
-html {
-    scroll-behavior: smooth;
-}
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #0d1a26;">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="#">LUMIO CERTITUDE LAB</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> 
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50" href="#journey">The Axiom Method</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50" href="#value">The Guarantee</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-sm btn-outline-primary ms-3" href="#contact">Book Strategy Session</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <header id="home" class="hero-section text-center d-flex align-items-center" style="min-height: 90vh;">
+        <div class="container py-5">
+            <h1 class="mb-4" style="color: #6cf0ff; text-shadow: 0 0 15px rgba(108, 240, 255, 0.5); font-size: 3.5rem;">
+                Vision to High-Conviction Conversion.
+            </h1>
+            <p class="lead mb-5 fs-4 text-white-75">
+                We eliminate the strategic blind spots that lead to <strong>80% of startup failures</strong>. We deliver the scientific <strong>Certitude</strong> required for executive buy-in and guaranteed ROI lift.
+            </p>
+            <a href="#journey" class="btn btn-primary btn-lg px-5 py-3 me-3 shadow-lg">See The Axiom Method</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg px-5 py-3">Book Strategy Call</a>
+        </div>
+    </header>
 
-/* --- LAYOUT AND COLORS --- */
-.btn-primary, .bg-primary, .badge-primary {
-    --bs-btn-bg: #6cf0ff;
-    --bs-btn-border-color: #6cf0ff;
-    --bs-btn-hover-bg: #41d2e8;
-    --bs-btn-hover-border-color: #41d2e8;
-    --bs-btn-color: #000000; 
-    --bs-badge-bg: #6cf0ff;
-}
-.text-primary, .bi {
-    color: #6cf0ff !important; 
-}
+    <section id="value" class="py-5 bg-black">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: #6cf0ff; font-size: 2.2rem;">THE AXIOM METHOD: ELIMINATE DOUBT. MAXIMIZE ROI.</h2>
+            <div class="row justify-content-center"> 
+                
+                <div class="col-md-6 mb-4">
+                    <div class="p-5 border border-primary rounded-3 h-100 shadow-lg" style="background-color: #1a2a35;">
+                        <h3 class="fw-bold mb-3 text-white">The Lumio Guarantee</h3>
+                        <p class="text-white-75 fs-5">
+                            <strong>Strategic QA:</strong> We provide the verifiable, objective analysis required to secure investment and accelerate market fit. We sell <strong>Certitude</strong>, not design time.
+                        </p>
+                        <i class="bi bi-magic display-4 mt-3" style="color: #6cf0ff;"></i>
+                    </div>
+                </div>
 
-/* Navigation Links (LTR alignment) */
-.navbar-nav .nav-link {
-    margin-left: 15px; 
-    font-weight: 600;
-}
+                <div class="col-md-6 mb-4">
+                     <div class="p-5 border border-secondary rounded-3 h-100">
+                        <h3 class="fw-bold mb-3 text-white">The Old Way: The Cost of Guesswork</h3>
+                        <p class="text-white-50 fs-5">
+                            Hiring multiple teams leads to <strong>9+ months of delay</strong>, wasted development budget on flawed ideas, and the high risk of political conflict over scope.
+                        </p>
+                        <i class="bi bi-x-octagon-fill display-4 text-danger mt-3"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-/* Hero Section Background and Overlay */
-.hero-section {
-    background: url('https://picsum.photos/1920/1080?random=3&blur=5') no-repeat center center;
-    background-size: cover;
-    position: relative;
-    color: white;
-}
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.75); /* Dark overlay */
-    z-index: 1;
-}
-.hero-section > .container {
-    position: relative;
-    z-index: 2;
-}
-.text-white-75 {
-    color: rgba(255, 255, 255, 0.85) !important;
-}
-
-/* Card Styling and Hover Effect */
-.card {
-    transition: transform 0.3s ease-in-out;
-}
-.card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 10px 20px rgba(108, 240, 255, 0.2) !important; 
-}
-
-/* Section Separators */
-#value, #journey, #contact {
-    border-top: 1px solid rgba(108, 240, 255, 0.1) !important; 
-}
-
-
-/* --- סקשן יצירת קשר (LET'S TALK) --- */
-
-.contact-section {
-    background-color: #121212; /* רקע כהה מאוד */
-    color: #fff; /* צבע טקסט לבן */
-    padding: 60px 20px;
-    text-align: center;
-    font-family: Arial, sans-serif; /* או הפונט שבשימוש באתר */
-}
-
-.contact-title {
-    font-size: 3em; /* גודל כותרת גדולה */
-    font-weight: bold;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-}
-
-/* קו אדום מפריד */
-.separator-line {
-    width: 200px; /* רוחב הקו */
-    height: 2px;
-    background-color: #ff0000; /* צבע אדום חזק */
-    margin: 0 auto 40px auto; /* מרכז את הקו */
-}
-
-.contact-details {
-    display: flex;
-    justify-content: center; /* מרכז את פרטי הקשר */
-    flex-wrap: wrap; /* שובר שורה במסכים קטנים */
-    gap: 50px; /* רווח בין האימייל לטלפון */
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    font-size: 1.2em;
-    color: #a0a0a0; /* צבע אפור בהיר לפרטים */
-}
-
-.contact-item .icon {
-    font-size: 1.5em;
-    margin-right: 10px;
-}
-
-.contact-item a {
-    color: #a0a0a0; /* צבע אפור לקישורים */
-    text-decoration: none; /* הסרת קו תחתון מקישור */
-    transition: color 0.3s;
-}
-
-.contact-item a:hover {
-    color: #fff; /* צבע לבן בריחוף (hover) */
-}
-
-/* התאמה למסכים קטנים יותר */
-@media (max-width: 600px) {
-    .contact-title {
-        font-size: 2.5em;
-    }
-    .contact-details {
-        flex-direction: column;
-        gap: 20px;
-    }
-}
-
-/*
- * ------------------------------------------------------------------
- * CSS עבור רובריקת יצירת קשר (LET'S TALK) - בהתאם לדרישות הניאון
- * ------------------------------------------------------------------
- */
-
-.contact-section {
-    /* צבע רקע כהה לשמירה על ניגודיות */
-    background-color: #1a1a1a; 
-    padding: 60px 20px;
-    text-align: center;
-}
-
-/* וודא שהפונט Montserrat נטען עבור חלק זה בלבד */
-.contact-section * {
-    font-family: 'Montserrat', sans-serif !important; 
-}
-
-/* הכותרת LET'S TALK */
-.contact-title {
-    font-size: 3em; 
-    font-weight: 900; /* משקל שחור, הכי עבה */
-    color: #FFFFFF; /* לבן חזק */
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-/* קו מפריד עם אפקט ניאון */
-.separator-line {
-    width: 200px; 
-    height: 2px;
-    background-color: #00FFFF; /* צבע ליבת הניאון כחול-ציאן */
-    margin: 0 auto 40px auto; 
-    
-    /* אפקט זוהר ניאון */
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 
-                0 0 20px rgba(0, 255, 255, 0.4); 
-}
-
-.contact-details {
-    display: flex;
-    justify-content: center; 
-    flex-wrap: wrap; 
-    gap: 50px; 
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    font-size: 1.2em;
-    font-weight: 400; /* משקל רגיל לפרטים */
-}
-
-/* קישורי האימייל והטלפון */
-.contact-item a {
-    color: #A0A0A0; /* צבע אפור נייטרלי לטקסט */
-    text-decoration: none; 
-    transition: color 0.3s;
-}
-
-/* עיצוב האייקונים (כחול ניאון) */
-.contact-item .icon {
-    font-size: 1.5em;
-    margin-right: 10px;
-    color: #00FFFF; /* צבע ניאון כחול לאייקונים */
-}
-
-/* אפקט ריחוף (Hover) */
-.contact-item a:hover {
-    color: #00FFFF; /* צבע ניאון בריחוף */
-}
-
-/* התאמה למובייל */
-@media (max-width: 600px) {
-    .contact-title {
-        font-size: 2.5em;
-    }
-    .contact-details {
-        flex-direction: column;
-        gap: 20px;
-    }
-}
-
-/* --- סגנונות כרטיסיות ה-4 שבועות (Week Cards) --- */
-
-.week-card {
-    background-color: #1a2a35;
-    border: 1px solid rgba(108, 240, 255, 0.1);
-    border-top: 5px solid #6cf0ff; /* קו ניאון עבה למעלה */
-    height: 100%;
-    box-shadow: 0 0 15px rgba(108, 240, 255, 0.15); /* זוהר קל */
-}
-
-.week-card i {
-    color: #6cf0ff;
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    text-shadow: 0 0 10px #6cf0ff; /* אפקט ניאון לאייקון */
-}
-
-.week-card h3 {
-    color: #FFFFFF;
-    font-weight: 700;
-    font-size: 1.4rem;
-}
-
-.week-card p {
-    color: #E0E0E0; /* צבע טקסט בהיר יותר בפנים */
-}
-
-/* אם השתמשת ב-badge: */
-.week-card .badge {
-    background-color: #6cf0ff !important;
-    color: #121212;
-    font-weight: 900;
-}
-
-.week-card i {
-    /* ... קוד קיים ... */
-    display: block; /* מוודא שהאייקון תופס שורה שלמה */
-    margin-bottom: 10px; /* **מוסיף את הרווח האנכי המבוקש מתחת לאייקון** */
-    /* ... קוד קיים ... */
-}
+    <section id="journey" class="py-5" style="background-color: #0d1a26;">
+        <div class="container">
+            <h2 class="text-center mb-5 text-white" style="font-size: 2.2rem;">THE 4-WEEK AXIOM METHOD PROCESS</h2>
+            
+            <div class="row text-center justify-content-center">
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card bg-dark text-light border-0 shadow-sm p-4 h-100" style="border-top: 4px solid #6cf0ff;">
+                        <span class="badge bg-primary mb-3">WEEK 1</span>
