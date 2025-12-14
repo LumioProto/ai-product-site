@@ -25,7 +25,7 @@
         /* --- GLOBAL SETTINGS --- */
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px; /* Global fix for sticky navbar offset */
+            scroll-padding-top: 80px; 
         }
 
         body {
@@ -50,16 +50,18 @@
 
         strong { font-weight: 600; color: #fff; }
 
-        /* --- NAVBAR LINKS STYLING (New & Improved) --- */
+        /* --- NAVBAR LINKS STYLING --- */
         .navbar-nav .nav-link {
             font-family: 'Raleway', sans-serif;
-            font-weight: 500; /* Bolder than before */
+            font-weight: 500; 
             font-size: 0.85rem;
-            letter-spacing: 1.5px; /* Spaced out like the buttons */
-            color: #fff !important; /* White instead of boring gray */
+            letter-spacing: 1.5px;
+            color: #fff !important; 
             transition: color 0.3s ease;
             text-transform: uppercase;
             margin-left: 15px;
+            padding-top: 0 !important;   /* Fix alignment */
+            padding-bottom: 0 !important; /* Fix alignment */
         }
         .navbar-nav .nav-link:hover {
             color: var(--accent-color) !important;
@@ -110,13 +112,13 @@
             background-position: center;
         }
 
-        /* --- CARDS & BADGES (Fixed Positioning) --- */
+        /* --- CARDS & BADGES --- */
         .card {
             background-color: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 4px;
             transition: transform 0.4s ease, border-color 0.4s ease;
-            position: relative; /* Critical for absolute badges */
+            position: relative; 
             overflow: hidden;
         }
         .card:hover {
@@ -124,7 +126,6 @@
             border-color: var(--accent-color);
         }
         
-        /* Badges moved to corners */
         .badge-corner {
             position: absolute;
             top: 20px;
@@ -152,11 +153,9 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* Helpers */
         .text-primary { color: var(--accent-color) !important; }
         .border-secondary { border-color: rgba(255,255,255,0.15) !important; }
         
-        /* Ensure content inside card pushes down so it doesn't overlap badges */
         .card-content-spacer {
             margin-top: 30px; 
         }
@@ -175,7 +174,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto"> 
+                <ul class="navbar-nav ms-auto align-items-center"> 
                     <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
                     <li class="nav-item"><a class="nav-link" href="#process">THE PROCESS</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
