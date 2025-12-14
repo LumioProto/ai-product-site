@@ -10,7 +10,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600&family=Inter:wght@300;400;500&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600&family=Inter:wght@300;400;500;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         /* --- COLOR PALETTE --- */
@@ -37,7 +37,7 @@
         }
 
         /* --- TYPOGRAPHY --- */
-        h1, h2, h3, .navbar-brand, .btn, .badge-corner, .company-tag {
+        h1, h2, h3, .navbar-brand, .btn, .badge-corner, .stat-header, .company-text {
             font-family: 'Raleway', sans-serif; 
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -136,23 +136,48 @@
             border-color: #fff;
         }
 
-        /* --- COMPANY TAGS --- */
-        .company-tag {
-            font-size: 0.85rem;
+        /* --- STATS & LOGOS STYLING --- */
+        .stat-block {
+            text-align: center;
+            padding-right: 25px;
+            margin-right: 25px;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+        .stat-block:last-child {
+            border-right: none;
+        }
+        
+        .stat-num {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color: #fff;
+            line-height: 1;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .stat-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
             color: var(--text-muted);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 8px 16px;
-            border-radius: 50px;
-            display: inline-flex;
+            text-transform: uppercase;
+        }
+
+        .company-logo {
+            opacity: 0.6;
+            transition: opacity 0.3s;
+            display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255,255,255,0.02);
-            transition: all 0.3s ease;
-        }
-        .company-tag:hover {
-            border-color: var(--accent-color);
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
             color: #fff;
-            background: rgba(255,255,255,0.05);
+        }
+        .company-logo:hover {
+            opacity: 1;
+            color: var(--accent-color);
         }
 
         /* --- HERO --- */
@@ -288,7 +313,7 @@
             
             <h2 class="text-center mb-5 display-5">THE ARCHITECT.</h2>
 
-            <div class="row align-items-start gx-4">
+            <div class="row align-items-start gx-5">
                 
                 <div class="col-lg-4 text-center text-lg-end mb-4 mb-lg-0">
                     <div class="profile-img-circle-container d-inline-block">
@@ -311,40 +336,42 @@
                         My job is to be the bridge. I take your ideas mix them with the essence of your business and structure them into a coherent, dev-ready blueprint ready for development studio to bring into life. I don't "manage" products, but architect the foundation so your team can build it quick and easy.
                     </p>
                     
-                    <div class="mt-4 pt-4 border-top border-secondary">
-                        <div class="d-flex gap-5 flex-wrap justify-content-center justify-content-lg-start align-items-center">
+                    <div class="mt-5 pt-4 border-top border-secondary">
+                        <div class="text-start mb-3">
+                             <span class="stat-header" style="font-size: 0.8rem; color: #fff; opacity: 0.5;">YEARS OF EXPERIENCE</span>
+                        </div>
+                        
+                        <div class="d-flex flex-wrap align-items-center gap-4">
                             
-                            <div class="d-flex gap-4">
-                                <div class="text-center">
-                                    <strong class="d-block fs-3 text-white lh-1">7y</strong>
-                                    <small style="color: var(--text-muted); text-transform: uppercase; font-size: 0.75rem;">DEV</small>
-                                </div>
-                                <div class="text-center">
-                                    <strong class="d-block fs-3 text-white lh-1">5y+</strong>
-                                    <small style="color: var(--text-muted); text-transform: uppercase; font-size: 0.75rem;">PM</small>
-                                </div>
-                                <div class="text-center">
-                                    <strong class="d-block fs-3 text-white lh-1">3y+</strong>
-                                    <small style="color: var(--text-muted); text-transform: uppercase; font-size: 0.75rem;">ENTR</small>
-                                </div>
+                            <div class="stat-block">
+                                <span class="stat-num">7</span>
+                                <span class="stat-title">DEV</span>
+                            </div>
+                            
+                            <div class="stat-block">
+                                <span class="stat-num">5+</span>
+                                <span class="stat-title">PM</span>
                             </div>
 
-                            <div class="d-none d-lg-block" style="width: 1px; height: 40px; background-color: rgba(255,255,255,0.1);"></div>
+                            <div class="stat-block" style="border-right: none;">
+                                <span class="stat-num">3+</span>
+                                <span class="stat-title">ENTREPRENEURSHIP</span>
+                            </div>
+                            
+                            <div class="d-none d-lg-block mx-2" style="width: 1px; height: 50px; background-color: rgba(255,255,255,0.1);"></div>
 
-                            <div class="d-flex gap-3 flex-wrap justify-content-center">
-                                <span class="company-tag">
-                                    <i class="bi bi-microsoft"></i> Microsoft
-                                </span>
-                                <span class="company-tag">
+                            <div class="d-flex gap-4 align-items-center ms-lg-2 mt-3 mt-lg-0">
+                                <div class="company-logo">
+                                    <i class="bi bi-microsoft fs-4"></i> Microsoft
+                                </div>
+                                <div class="company-logo">
                                     ironSource
-                                </span>
-                                <span class="company-tag">
-                                    VOTRE
-                                </span>
+                                </div>
                             </div>
-
+                            
                         </div>
                     </div>
+
                 </div>
 
             </div>
