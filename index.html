@@ -9,12 +9,27 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="lumio.css"> 
+    
+    <style>
+        /* FIX FOR SCROLL OFFSET */
+        /* This ensures that when you click a menu link, it stops with space ABOVE the title */
+        section {
+            scroll-margin-top: 120px; /* Adjusts for navbar height + breathing room */
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body class="bg-dark text-light">
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #0d1a26;">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#" style="color: #6cf0ff; letter-spacing: 2px;">LUMIO PRODUCT LAB</a>
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#" style="color: #6cf0ff; letter-spacing: 2px;">
+                <img src="logo1.png" alt="Lumio Logo" style="height: 35px; margin-right: 12px;">
+                LUMIO PRODUCT LAB
+            </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -196,7 +211,10 @@
                 
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card bg-dark text-light border-0 shadow-sm p-4 h-100 text-center" style="border-top: 4px solid #6cf0ff;">
-                        <span class="badge bg-primary mb-3 mx-auto">STEP 1</span>
+                        <div class="d-flex justify-content-start w-100 mb-3">
+                             <span class="badge bg-primary">STEP 1</span>
+                        </div>
+                        
                         <i class="bi bi-search display-5 mb-3" style="color: #6cf0ff;"></i>
                         <h3 class="fw-bold fs-5">I LEARN.</h3><br>
                         <p class="text-white-50">We sit down. You download your brain. I ask the hard questions to understand exactly what we are building and why.</p>
@@ -205,7 +223,10 @@
                 
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card bg-dark text-light border-0 shadow-sm p-4 h-100 text-center" style="border-top: 4px solid #6cf0ff;">
-                         <span class="badge bg-primary mb-3 mx-auto">STEP 2</span>
+                         <div class="d-flex justify-content-start w-100 mb-3">
+                             <span class="badge bg-primary">STEP 2</span>
+                        </div>
+
                         <i class="bi bi-diagram-3-fill display-5 mb-3 d-block mx-auto" style="color: #6cf0ff;"></i>
                         <h3 class="fw-bold fs-5">I PLAN.</h3><br>
                         <p class="text-white-50">I go into my lab. I map out every screen, every button, and every rule. I turn your idea into a logical structure.</p>
@@ -214,7 +235,10 @@
                 
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card bg-dark text-light border-0 shadow-sm p-4 h-100 text-center" style="border-top: 4px solid #6cf0ff;">
-                        <span class="badge bg-primary mb-3 mx-auto">STEP 3</span>
+                        <div class="d-flex justify-content-start w-100 mb-3">
+                             <span class="badge bg-primary">STEP 3</span>
+                        </div>
+
                         <i class="bi bi-file-earmark-richtext-fill display-5 mb-3" style="color: #6cf0ff;"></i>
                         <h3 class="fw-bold fs-5">YOU BUILD.</h3><br>
                         <p class="text-white-50">You receive the full Blueprint. Now you can hand it to any developer, and they will know exactly what to do.</p>
@@ -229,7 +253,7 @@
             <h2 class="text-center mb-3" style="color: #6cf0ff; font-size: 2.2rem;">READY TO START?</h2>
             <div class="row justify-content-center">
                 <div class="col-md-7">
-                    <form action="#" method="POST" class="p-5 rounded-3 shadow-lg" style="background-color: #1a2a35;"> 
+                    <form action="#" method="POST" class="p-4 rounded-3 shadow-lg" style="background-color: #1a2a35;"> 
                         <div class="mb-3">
                             <label for="name" class="form-label text-white">Full Name</label>
                             <input type="text" class="form-control" id="name" style="background-color: #0d1a26; border-color: #334455;" required>
