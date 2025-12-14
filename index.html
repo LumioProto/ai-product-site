@@ -10,58 +10,59 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- COLOR PALETTE: Boutique Luxury --- */
+        /* --- COLOR PALETTE --- */
         :root {
-            --bg-color: #0f1623; /* Deep Charcoal Blue - Softer than black */
-            --card-bg: rgba(255, 255, 255, 0.03); /* Glassy subtle */
-            --accent-color: #d4c291; /* Champagne Gold - Elegant & Warm */
-            --text-color: #e2e8f0; /* Soft White */
-            --text-muted: #94a3b8; /* Muted Blue-Grey */
+            --bg-color: #0f1623; 
+            --card-bg: rgba(255, 255, 255, 0.03); 
+            --accent-color: #d4c291; 
+            --text-main: #f1f5f9; 
+            --text-muted: #cbd5e1; 
         }
 
         /* --- GLOBAL SETTINGS --- */
         body {
             background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Raleway', sans-serif; /* Use Raleway everywhere for elegance */
-            font-weight: 300; /* Default to Light weight */
-            text-rendering: optimizeLegibility;
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif; 
+            font-weight: 300;
+            line-height: 1.6;
         }
 
-        /* --- TYPOGRAPHY --- */
+        /* --- HEADINGS --- */
         h1, h2, h3, .navbar-brand {
             font-family: 'Raleway', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 2px; /* Wide spacing = Luxury */
-            font-weight: 400; /* Keep headings light/regular, not bold */
-        }
-        
-        h1 { 
-            font-weight: 300; /* Very elegant thin main title */
-        } 
-
-        strong {
-            font-weight: 600;
+            letter-spacing: 2px;
             color: #fff;
         }
-
-        /* --- COLORS & BUTTONS --- */
-        .text-primary { color: var(--accent-color) !important; }
-        .bg-primary { background-color: var(--accent-color) !important; color: #0f1623; }
-        .border-primary { border-color: var(--accent-color) !important; }
-        .border-secondary { border-color: rgba(255,255,255,0.1) !important; }
         
+        h1 { font-weight: 300; font-size: 2.8rem !important; } 
+        h2 { font-weight: 400; font-size: 1.8rem !important; }
+        h3 { font-weight: 500; font-size: 1.3rem !important; }
+
+        strong { font-weight: 600; color: #fff; }
+
+        /* --- BUTTONS (Fixed Alignment) --- */
+        .btn {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            padding: 12px 30px; /* Same padding for both */
+            border-radius: 4px;
+            display: inline-flex; /* Magic fix for alignment */
+            align-items: center; /* Centers text vertically */
+            justify-content: center; /* Centers text horizontally */
+            min-height: 50px; /* Forces equal height */
+            transition: all 0.3s ease;
+        }
+
         .btn-primary {
             background-color: transparent;
             border: 1px solid var(--accent-color);
             color: var(--accent-color);
-            font-weight: 500;
-            letter-spacing: 1px;
-            padding: 12px 30px;
-            transition: all 0.3s ease;
         }
         .btn-primary:hover {
             background-color: var(--accent-color);
@@ -72,48 +73,49 @@
 
         .btn-outline-light {
             border-color: rgba(255,255,255,0.3);
-            color: rgba(255,255,255,0.8);
+            color: rgba(255,255,255,0.9);
         }
         .btn-outline-light:hover {
             background-color: #fff;
             color: #000;
+            border-color: #fff;
         }
 
-        /* --- SCROLL FIX --- */
-        section {
-            scroll-margin-top: 60px;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
+        /* --- UTILS --- */
+        .text-primary { color: var(--accent-color) !important; }
+        .bg-primary { background-color: var(--accent-color) !important; color: #0f1623; }
+        .border-primary { border-color: var(--accent-color) !important; }
+        .border-secondary { border-color: rgba(255,255,255,0.15) !important; }
+        
+        section { scroll-margin-top: 60px; }
+        html { scroll-behavior: smooth; }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero-section {
-            /* A cleaner, darker gradient over the image */
             background: linear-gradient(to bottom, rgba(15, 22, 35, 0.9), rgba(15, 22, 35, 0.8)), url('https://picsum.photos/1920/1080?random=3&blur=2');
             background-size: cover;
             background-position: center;
         }
 
-        /* --- CARDS (The "Glass" Look) --- */
+        /* --- CARDS --- */
         .card {
             background-color: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.08); /* Very subtle border */
-            border-radius: 4px; /* Sharper corners for architectural look */
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
             transition: transform 0.4s ease, border-color 0.4s ease;
         }
         .card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-color); /* Glow gold on hover */
+            border-color: var(--accent-color);
         }
         
-        /* Custom Badge Style */
         .badge {
             background-color: rgba(212, 194, 145, 0.15) !important;
             color: var(--accent-color) !important;
             border: 1px solid var(--accent-color);
             font-weight: 500;
             letter-spacing: 1px;
+            font-family: 'Raleway', sans-serif;
         }
     </style>
 </head>
@@ -121,7 +123,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: rgba(15, 22, 35, 0.95); border-bottom: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
         <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="#" style="color: #fff; font-size: 1.1rem; letter-spacing: 3px;">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#" style="color: #fff; font-size: 1.1rem; letter-spacing: 2px;">
                 <img src="logo1.png" alt="Lumio Logo" style="height: 30px; margin-right: 15px; opacity: 0.9;">
                 LUMIO PRODUCT LAB
             </a>
@@ -142,30 +144,31 @@
 
     <header id="home" class="hero-section text-center d-flex align-items-center" style="min-height: 90vh;">
         <div class="container py-5">
-            <h1 class="mb-4" style="color: #fff; font-size: 3.5rem; line-height: 1.3; font-weight: 300;">
+            <h1 class="mb-4">
                 Don't write a single line of code<br>
                 <span style="color: var(--accent-color); font-weight: 400;">Until you have a blueprint.</span>
             </h1>
-            <p class="lead mb-5 fs-5" style="color: var(--text-muted); max-width: 700px; margin: 0 auto; line-height: 1.8;">
+            <p class="lead mb-5" style="color: var(--text-muted); max-width: 650px; margin: 0 auto; font-size: 1.15rem;">
                 I provide strategic certainty for founders and scale-ups.<br> 
                 Define exactly <strong>what</strong> to build, before you burn cash on <strong>how</strong> to build it.
             </p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#services" class="btn btn-primary btn-lg">VIEW PACKAGES</a>
-                <a href="#contact" class="btn btn-outline-light btn-lg">BOOK STRATEGY CALL</a>
+            
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#services" class="btn btn-primary">VIEW PACKAGES</a>
+                <a href="#contact" class="btn btn-outline-light">SCHEDULE CONSULTATION</a>
             </div>
         </div>
     </header>
 
     <section id="why-me" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5" style="color: #fff; font-size: 2rem;">WHY YOU NEED AN ARCHITECT.</h2>
+            <h2 class="text-center mb-5">WHY YOU NEED AN ARCHITECT.</h2>
             <div class="row justify-content-center"> 
                 
                 <div class="col-md-6 mb-4">
                     <div class="p-5 h-100 text-center card shadow-none" style="border-top: 3px solid var(--accent-color);">
-                        <h3 class="fw-bold mb-3 text-white fs-4">The Smart Way: <br><span style="color: var(--accent-color)">Plan First, Build Later</span></h3>
-                        <p style="color: var(--text-muted); line-height: 1.7;">
+                        <h3 class="fw-bold mb-3 text-white">The Smart Way: <br><span style="color: var(--accent-color)">Plan First, Build Later</span></h3>
+                        <p style="color: var(--text-muted);">
                            Think of me as the architect of a house. I draw the plans, I check the structure, and I calculate the costs <strong>before</strong> you hire the construction crew. It's 10x cheaper to fix a blueprint than to tear down a wall.
                         </p>
                         <div class="text-center mt-4">
@@ -176,8 +179,8 @@
 
                 <div class="col-md-6 mb-4">
                      <div class="p-5 h-100 text-center card shadow-none" style="border-top: 3px solid #4a5568;">
-                        <h3 class="fw-bold mb-3 text-white fs-4">The Wrong Way: <br><span style="color: #94a3b8">"Let's Just Start Coding"</span></h3>
-                        <p style="color: var(--text-muted); line-height: 1.7;">
+                        <h3 class="fw-bold mb-3 text-white">The Wrong Way: <br><span style="color: #94a3b8">"Let's Just Start Coding"</span></h3>
+                        <p style="color: var(--text-muted);">
                             Most startups skip the architecture. They hire developers immediately. The result? They build features nobody wants, run out of money halfway, and end up with "Spaghetti Code" that needs to be rewritten.
                         </p>
                         <div class="text-center mt-4">
@@ -191,7 +194,7 @@
 
     <section id="services" class="pt-3 pb-5">
         <div class="container-fluid px-lg-5">
-            <h2 class="text-center display-5 mb-5" style="color: #fff; font-size: 2rem;">MY SERVICES.</h2>
+            <h2 class="text-center display-5 mb-5">MY SERVICES.</h2>
 
             <div class="row justify-content-center g-4">
                 
@@ -205,9 +208,9 @@
                         <div class="mb-4 text-center">
                             <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
                                  <i class="bi bi-box-seam display-4 text-primary"></i>
-                                 <h3 class="text-white mb-0 fs-4">GENESIS ARCHITECTURE</h3>
+                                 <h3 class="text-white mb-0">GENESIS ARCHITECTURE</h3>
                             </div>
-                            <p class="small mx-auto mb-1" style="color: var(--text-muted); max-width: 80%;">
+                            <p class="small mx-auto mb-1" style="color: var(--text-muted); font-weight: 400; max-width: 80%;">
                                 Don't build a spaceship when you need a bicycle. Strategic foundation to launch fast.
                             </p>
                         </div>
@@ -249,9 +252,9 @@
                         <div class="mb-4 text-center">
                             <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
                                  <i class="bi bi-heart-pulse display-4 text-primary"></i>
-                                 <h3 class="text-white mb-0 fs-4">SURGICAL OPTIMIZATION</h3>
+                                 <h3 class="text-white mb-0">SURGICAL OPTIMIZATION</h3>
                             </div>
-                            <p class="small mx-auto mb-1" style="color: var(--text-muted); max-width: 80%;">
+                            <p class="small mx-auto mb-1" style="color: var(--text-muted); font-weight: 400; max-width: 80%;">
                                 Your product is leaking users. I find the leak and plug it with precise design logic.
                             </p>
                         </div>
@@ -288,7 +291,7 @@
 
     <section id="process" class="pt-3 pb-5">
         <div class="container">
-            <h2 class="text-center mb-5 text-white" style="font-size: 2rem;">SIMPLE 3-STEP PROCESS</h2>
+            <h2 class="text-center mb-5">SIMPLE 3-STEP PROCESS</h2>
             
             <div class="row text-center justify-content-center">
                 
@@ -333,20 +336,20 @@
 
     <section id="contact" class="py-4">
         <div class="container">
-            <h2 class="text-center mb-3" style="color: #fff; font-size: 2rem;">READY TO START?</h2>
+            <h2 class="text-center mb-3">READY TO START?</h2>
             <div class="row justify-content-center">
                 <div class="col-md-7">
                     <form action="#" method="POST" class="p-4 rounded-3 card"> 
                         <div class="mb-3">
-                            <label for="name" class="form-label text-white small">FULL NAME</label>
+                            <label for="name" class="form-label text-white small" style="font-weight: 500;">FULL NAME</label>
                             <input type="text" class="form-control" id="name" style="background-color: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #fff;" required>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label text-white small">WORK EMAIL</label>
+                            <label for="email" class="form-label text-white small" style="font-weight: 500;">WORK EMAIL</label>
                             <input type="email" class="form-control" id="email" style="background-color: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #fff;" required>
                         </div>
                         <div class="mb-3">
-                            <label for="message" class="form-label text-white small">WHICH PACKAGE ARE YOU INTERESTED IN?</label>
+                            <label for="message" class="form-label text-white small" style="font-weight: 500;">WHICH PACKAGE ARE YOU INTERESTED IN?</label>
                             <textarea class="form-control" id="message" rows="2" style="background-color: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #fff;" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-100 py-3 shadow-sm fs-6">APPLY FOR A SPOT</button>
