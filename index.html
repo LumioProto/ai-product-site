@@ -23,6 +23,11 @@
         }
 
         /* --- GLOBAL SETTINGS --- */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* Global fix for sticky navbar offset */
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
@@ -31,7 +36,7 @@
             line-height: 1.6;
         }
 
-        /* --- HEADINGS --- */
+        /* --- TYPOGRAPHY --- */
         h1, h2, h3, .navbar-brand {
             font-family: 'Raleway', sans-serif;
             text-transform: uppercase;
@@ -45,18 +50,35 @@
 
         strong { font-weight: 600; color: #fff; }
 
-        /* --- BUTTONS (Fixed Alignment) --- */
+        /* --- NAVBAR LINKS STYLING (New & Improved) --- */
+        .navbar-nav .nav-link {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500; /* Bolder than before */
+            font-size: 0.85rem;
+            letter-spacing: 1.5px; /* Spaced out like the buttons */
+            color: #fff !important; /* White instead of boring gray */
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            margin-left: 15px;
+        }
+        .navbar-nav .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+
+        /* --- BUTTONS --- */
         .btn {
             font-family: 'Raleway', sans-serif;
-            font-weight: 500;
+            font-weight: 600;
             letter-spacing: 1px;
-            padding: 12px 30px; /* Same padding for both */
+            padding: 12px 30px;
             border-radius: 4px;
-            display: inline-flex; /* Magic fix for alignment */
-            align-items: center; /* Centers text vertically */
-            justify-content: center; /* Centers text horizontally */
-            min-height: 50px; /* Forces equal height */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
         .btn-primary {
@@ -73,22 +95,13 @@
 
         .btn-outline-light {
             border-color: rgba(255,255,255,0.3);
-            color: rgba(255,255,255,0.9);
+            color: #fff;
         }
         .btn-outline-light:hover {
             background-color: #fff;
             color: #000;
             border-color: #fff;
         }
-
-        /* --- UTILS --- */
-        .text-primary { color: var(--accent-color) !important; }
-        .bg-primary { background-color: var(--accent-color) !important; color: #0f1623; }
-        .border-primary { border-color: var(--accent-color) !important; }
-        .border-secondary { border-color: rgba(255,255,255,0.15) !important; }
-        
-        section { scroll-margin-top: 60px; }
-        html { scroll-behavior: smooth; }
 
         /* --- HERO --- */
         .hero-section {
@@ -97,25 +110,55 @@
             background-position: center;
         }
 
-        /* --- CARDS --- */
+        /* --- CARDS & BADGES (Fixed Positioning) --- */
         .card {
             background-color: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 4px;
             transition: transform 0.4s ease, border-color 0.4s ease;
+            position: relative; /* Critical for absolute badges */
+            overflow: hidden;
         }
         .card:hover {
             transform: translateY(-5px);
             border-color: var(--accent-color);
         }
         
-        .badge {
-            background-color: rgba(212, 194, 145, 0.15) !important;
+        /* Badges moved to corners */
+        .badge-corner {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(212, 194, 145, 0.1) !important;
             color: var(--accent-color) !important;
-            border: 1px solid var(--accent-color);
-            font-weight: 500;
+            border: 1px solid rgba(212, 194, 145, 0.3);
+            font-weight: 600;
             letter-spacing: 1px;
             font-family: 'Raleway', sans-serif;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+        }
+
+        .time-corner {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Helpers */
+        .text-primary { color: var(--accent-color) !important; }
+        .border-secondary { border-color: rgba(255,255,255,0.15) !important; }
+        
+        /* Ensure content inside card pushes down so it doesn't overlap badges */
+        .card-content-spacer {
+            margin-top: 30px; 
         }
     </style>
 </head>
@@ -124,7 +167,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: rgba(15, 22, 35, 0.95); border-bottom: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="#" style="color: #fff; font-size: 1.1rem; letter-spacing: 2px;">
-                <img src="logo1.png" alt="Lumio Logo" style="height: 30px; margin-right: 15px; opacity: 0.9;">
+                <img src="logo3.png" alt="Lumio Logo" style="height: 30px; margin-right: 15px; opacity: 0.9;">
                 LUMIO PRODUCT LAB
             </a>
             
@@ -133,10 +176,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto"> 
-                    <li class="nav-item"><a class="nav-link text-white-50" href="#home" style="font-size: 0.9rem;">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link text-white-50" href="#process" style="font-size: 0.9rem;">PROCESS</a></li>
-                    <li class="nav-item"><a class="nav-link text-white-50" href="#services" style="font-size: 0.9rem;">SERVICES</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-sm btn-primary ms-3 px-3" href="#contact" style="color: var(--bg-color); background-color: var(--accent-color); border: none;">APPLY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#process">THE PROCESS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-sm btn-primary ms-3 px-4" href="#contact" style="color: var(--bg-color); background-color: var(--accent-color); border: none;">APPLY</a></li>
                 </ul>
             </div>
         </div>
@@ -200,10 +243,10 @@
                 
                 <div class="col-xl-5 col-lg-6 mb-4">
                     <div class="card p-5 h-100">
-                        <div class="d-flex justify-content-between align-items-start mb-4 w-100">
-                            <span class="badge px-3 py-2">FOR NEW VENTURES</span>
-                            <strong style="color: var(--text-muted); font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 50px;">2 Weeks</strong>
-                        </div>
+                        <span class="badge-corner">FOR NEW VENTURES</span>
+                        <span class="time-corner">2 Weeks</span>
+
+                        <div class="card-content-spacer"></div>
 
                         <div class="mb-4 text-center">
                             <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
@@ -244,10 +287,10 @@
 
                 <div class="col-xl-5 col-lg-6 mb-4">
                     <div class="card p-5 h-100">
-                        <div class="d-flex justify-content-between align-items-start mb-4 w-100">
-                            <span class="badge px-3 py-2">FOR EXISTING PRODUCTS</span>
-                            <strong style="color: var(--text-muted); font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 50px;">2 Weeks</strong>
-                        </div>
+                        <span class="badge-corner">FOR EXISTING PRODUCTS</span>
+                        <span class="time-corner">2 Weeks</span>
+
+                        <div class="card-content-spacer"></div>
 
                         <div class="mb-4 text-center">
                             <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
@@ -291,15 +334,14 @@
 
     <section id="process" class="pt-3 pb-5">
         <div class="container">
-            <h2 class="text-center mb-5">SIMPLE 3-STEP PROCESS</h2>
+            <h2 class="text-center mb-5">THE PROCESS</h2>
             
             <div class="row text-center justify-content-center">
                 
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card p-4 h-100 text-center">
-                        <div class="d-flex justify-content-start w-100 mb-3">
-                             <span class="badge">STEP 1</span>
-                        </div>
+                        <span class="badge-corner">STEP 1</span>
+                        <div class="card-content-spacer"></div>
                         
                         <i class="bi bi-search display-5 mb-3 text-primary"></i>
                         <h3 class="text-white fs-5">I LEARN.</h3><br>
@@ -309,9 +351,8 @@
                 
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card p-4 h-100 text-center">
-                        <div class="d-flex justify-content-start w-100 mb-3">
-                             <span class="badge">STEP 2</span>
-                        </div>
+                        <span class="badge-corner">STEP 2</span>
+                        <div class="card-content-spacer"></div>
 
                         <i class="bi bi-diagram-3 display-5 mb-3 text-primary"></i>
                         <h3 class="text-white fs-5">I PLAN.</h3><br>
@@ -321,9 +362,8 @@
                 
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card p-4 h-100 text-center">
-                        <div class="d-flex justify-content-start w-100 mb-3">
-                             <span class="badge">STEP 3</span>
-                        </div>
+                        <span class="badge-corner">STEP 3</span>
+                        <div class="card-content-spacer"></div>
 
                         <i class="bi bi-file-earmark-richtext display-5 mb-3 text-primary"></i>
                         <h3 class="text-white fs-5">YOU BUILD.</h3><br>
