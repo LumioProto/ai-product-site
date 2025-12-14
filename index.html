@@ -10,7 +10,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* --- GLOBAL SETTINGS --- */
@@ -22,16 +22,18 @@
             text-rendering: optimizeLegibility;
         }
 
-        /* --- TYPOGRAPHY (Professional & Geometric) --- */
+        /* --- TYPOGRAPHY (Gentle & Architect-like) --- */
         h1, h2, h3, .navbar-brand, .badge, .btn {
-            font-family: 'Montserrat', sans-serif !important;
+            font-family: 'Raleway', sans-serif !important;
             text-transform: uppercase;
-            letter-spacing: 0.5px; /* Slightly reduced spacing for a tighter, stronger look */
+            letter-spacing: 1.5px; /* More spacing for elegance */
         }
         
-        h1 { font-weight: 800; } /* Extra bold for main title */
-        h2 { font-weight: 700; }
-        h3 { font-weight: 700; }
+        h1 { 
+            font-weight: 600; /* Lighter weight - less aggressive */
+        } 
+        h2 { font-weight: 500; }
+        h3 { font-weight: 600; }
 
         /* --- COLORS --- */
         .text-primary { color: #6cf0ff !important; } /* Neon Cyan */
@@ -42,7 +44,7 @@
             background-color: #6cf0ff;
             border-color: #6cf0ff;
             color: #000;
-            font-weight: 700;
+            font-weight: 600; /* Lighter font weight on buttons too */
         }
         .btn-primary:hover {
             background-color: #41d2e8;
@@ -59,7 +61,7 @@
 
         /* --- HERO SECTION --- */
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://picsum.photos/1920/1080?random=3&blur=5');
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://picsum.photos/1920/1080?random=3&blur=5');
             background-size: cover;
             background-position: center;
         }
@@ -72,7 +74,7 @@
         }
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(108, 240, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(108, 240, 255, 0.1); /* Softer shadow */
         }
     </style>
 </head>
@@ -80,8 +82,8 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #0d1a26; border-bottom: 1px solid #1f2d3d;">
         <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="#" style="color: #6cf0ff; letter-spacing: 1px;">
-                <img src="logo1.png" alt="Lumio Logo" style="height: 35px; margin-right: 12px;">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#" style="color: #6cf0ff; font-size: 1.3rem;">
+                <img src="logo1.png" alt="Lumio Logo" style="height: 32px; margin-right: 12px;">
                 LUMIO PRODUCT LAB
             </a>
             
@@ -101,12 +103,12 @@
 
     <header id="home" class="hero-section text-center d-flex align-items-center" style="min-height: 90vh;">
         <div class="container py-5">
-            <h1 class="mb-4" style="color: #6cf0ff; text-shadow: 0 0 20px rgba(108, 240, 255, 0.4); font-size: 4rem; line-height: 1.1;">
+            <h1 class="mb-4" style="color: #6cf0ff; text-shadow: 0 0 20px rgba(108, 240, 255, 0.3); font-size: 3rem; line-height: 1.2;">
                 Don't write a single line of code
                 <br>
                 <span class="text-white">Until you have a blueprint.</span>
             </h1>
-            <p class="lead mb-5 fs-4 text-white-75" style="font-family: -apple-system, sans-serif;">
+            <p class="lead mb-5 fs-4 text-white-75" style="font-family: -apple-system, sans-serif; font-weight: 300;">
                 I provide strategic certainty for founders and scale-ups.<br> 
                 Define exactly <strong>what</strong> to build, before you burn cash on <strong>how</strong> to build it.
             </p>
@@ -117,7 +119,7 @@
 
     <section id="why-me" class="py-5 bg-black">
         <div class="container">
-            <h2 class="text-center mb-5" style="color: #6cf0ff; font-size: 2.5rem;">WHY YOU NEED AN ARCHITECT.</h2>
+            <h2 class="text-center mb-5" style="color: #6cf0ff; font-size: 2.2rem;">WHY YOU NEED AN ARCHITECT.</h2>
             <div class="row justify-content-center"> 
                 
                 <div class="col-md-6 mb-4">
