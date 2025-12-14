@@ -8,26 +8,80 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="lumio.css"> 
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* FIX FOR SCROLL OFFSET - TIGHTENED */
-        /* Reduced to 60px to bring the title closer to the navbar upon click */
-        section {
-            scroll-margin-top: 60px; 
+        /* --- GLOBAL SETTINGS --- */
+        body {
+            background-color: #000000;
+            color: #f8f9fa;
+            /* Body text stays clean system font for readability */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* --- TYPOGRAPHY (The Blueprint Look) --- */
+        h1, h2, h3, .navbar-brand, .badge, .btn {
+            font-family: 'Rajdhani', sans-serif !important;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
+        h1 { font-weight: 700; }
+        h2 { font-weight: 600; }
+
+        /* --- COLORS --- */
+        .text-primary { color: #6cf0ff !important; } /* Neon Cyan */
+        .bg-primary { background-color: #6cf0ff !important; color: #000; }
+        .border-primary { border-color: #6cf0ff !important; }
+        
+        .btn-primary {
+            background-color: #6cf0ff;
+            border-color: #6cf0ff;
+            color: #000;
+            font-weight: 700;
+        }
+        .btn-primary:hover {
+            background-color: #41d2e8;
+            border-color: #41d2e8;
+        }
+
+        /* --- SCROLL FIX --- */
+        /* Stops the scroll exactly 60px above the section title */
+        section {
+            scroll-margin-top: 60px;
+        }
         html {
             scroll-behavior: smooth;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://picsum.photos/1920/1080?random=3&blur=5');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* --- CARDS --- */
+        .card {
+            background-color: #1a1a1a;
+            border: 1px solid rgba(108, 240, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(108, 240, 255, 0.15);
         }
     </style>
 </head>
 <body class="bg-dark text-light">
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #0d1a26;">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #0d1a26; border-bottom: 1px solid #1f2d3d;">
         <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="#" style="color: #6cf0ff; letter-spacing: 2px;">
-                <img src="logo3.png" alt="Lumio Logo" style="height: 35px; margin-right: 12px;">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#" style="color: #6cf0ff; font-size: 1.5rem;">
+                <img src="logo1.png" alt="Lumio Logo" style="height: 35px; margin-right: 12px;">
                 LUMIO PRODUCT LAB
             </a>
             
@@ -36,18 +90,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto"> 
-                    <li class="nav-item">
-                        <a class="nav-link text-white-50" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white-50" href="#process">The Process</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white-50" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-sm btn-outline-primary ms-3" href="#contact">Apply for a Spot</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#process">The Process</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-sm btn-outline-primary ms-3" href="#contact">Apply for a Spot</a></li>
                 </ul>
             </div>
         </div>
@@ -55,12 +101,12 @@
 
     <header id="home" class="hero-section text-center d-flex align-items-center" style="min-height: 90vh;">
         <div class="container py-5">
-            <h1 class="mb-4" style="color: #6cf0ff; text-shadow: 0 0 15px rgba(108, 240, 255, 0.5); font-size: 3.5rem;">
+            <h1 class="mb-4" style="color: #6cf0ff; text-shadow: 0 0 20px rgba(108, 240, 255, 0.4); font-size: 4rem; line-height: 1.1;">
                 Don't write a single line of code
                 <br>
                 <span class="text-white">Until you have a blueprint.</span>
             </h1>
-            <p class="lead mb-5 fs-4 text-white-75">
+            <p class="lead mb-5 fs-4 text-white-75" style="font-family: -apple-system, sans-serif;">
                 I provide strategic certainty for founders and scale-ups.<br> 
                 Define exactly <strong>what</strong> to build, before you burn cash on <strong>how</strong> to build it.
             </p>
@@ -69,140 +115,138 @@
         </div>
     </header>
 
-<section id="why-me" class="py-5 bg-black">
-    <div class="container">
-        <h2 class="text-center mb-5" style="color: #6cf0ff; font-size: 2.2rem;">WHY YOU NEED AN ARCHITECT.</h2>
-        <div class="row justify-content-center"> 
-            
-            <div class="col-md-6 mb-4">
-                <div class="p-5 border border-primary rounded-3 h-100 shadow-lg text-center" style="background-color: #1a2a35;">
-                    <h3 class="fw-bold mb-3 text-white">The Smart Way: <br><strong>Plan First, Build Later</strong></h3>
-                    <p class="text-white-75 fs-5">
-                       Think of me as the architect of a house. I draw the plans, I check the structure, and I calculate the costs <strong>before</strong> you hire the construction crew. It's 10x cheaper to fix a blueprint than to tear down a wall.
-                    </p>
-                    <div class="text-center mt-4">
-                        <i class="bi bi-compass-fill display-4" style="color: #6cf0ff;"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mb-4">
-                 <div class="p-5 border border-secondary rounded-3 h-100 text-center">
-                    <h3 class="fw-bold mb-3 text-white">The Wrong Way: <br><strong>"Let's Just Start Coding"</strong></h3>
-                    <p class="text-white-50 fs-5">
-                        Most startups skip the architecture. They hire developers immediately. The result? They build features nobody wants, run out of money halfway, and end up with "Spaghetti Code" that needs to be rewritten.
-                    </p>
-                    <div class="text-center mt-4">
-                         <i class="bi bi-dice-5-fill display-4" style="color: #6cf0ff;"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="services" class="bg-black pt-3 pb-5">
-    <div class="container-fluid px-lg-5">
-        <h2 class="text-center fw-bold display-5 mb-5" style="color: #6cf0ff;">MY SERVICES.</h2>
-
-        <div class="row justify-content-center g-4">
-            
-            <div class="col-lg-6 mb-4">
-                <div class="card p-4 h-100 shadow-lg text-center" style="background-color: #1a1a1a; border-top: 5px solid #6cf0ff;">
-                    
-                    <div class="d-flex justify-content-between align-items-start mb-3 w-100">
-                        <span class="badge bg-primary px-3 py-2">FOR NEW VENTURES</span>
-                        <strong class="text-white border border-secondary px-3 py-1 rounded">2 Weeks</strong>
-                    </div>
-
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
-                             <i class="bi bi-box-seam-fill display-4 text-primary"></i>
-                             <h3 class="fw-bold text-white mb-0">GENESIS ARCHITECTURE</h3>
-                        </div>
-                        <p class="text-white-75 small mx-auto mb-1" style="max-width: 80%;">
-                            Don't build a spaceship when you need a bicycle. Strategic foundation to launch fast.
+    <section id="why-me" class="py-5 bg-black">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: #6cf0ff; font-size: 2.5rem;">WHY YOU NEED AN ARCHITECT.</h2>
+            <div class="row justify-content-center"> 
+                
+                <div class="col-md-6 mb-4">
+                    <div class="p-5 border border-primary rounded-3 h-100 shadow-lg text-center" style="background-color: #1a2a35;">
+                        <h3 class="fw-bold mb-3 text-white">The Smart Way: <br><strong>Plan First, Build Later</strong></h3>
+                        <p class="text-white-75 fs-5">
+                           Think of me as the architect of a house. I draw the plans, I check the structure, and I calculate the costs <strong>before</strong> you hire the construction crew. It's 10x cheaper to fix a blueprint than to tear down a wall.
                         </p>
-                    </div>
-                    
-                    <hr class="border-secondary mt-2 mb-4 w-50 mx-auto">
-
-                    <div class="row gy-4 gx-2">
-                        <div class="col-sm-6">
-                            <i class="bi bi-scissors text-primary fs-4 mb-2 d-block"></i>
-                            <strong class="text-white d-block mb-1">The "Money-Saver"</strong>
-                            <small class="text-white-50">Ruthlessly cutting 40% of unnecessary features.</small>
-                        </div>
-                        <div class="col-sm-6">
-                            <i class="bi bi-diagram-3 text-primary fs-4 mb-2 d-block"></i>
-                            <strong class="text-white d-block mb-1">Logic Map</strong>
-                            <small class="text-white-50">Mapping every click, error state, and user flow.</small>
-                        </div>
-                        <div class="col-sm-6">
-                            <i class="bi bi-grid-3x3 text-primary fs-4 mb-2 d-block"></i>
-                            <strong class="text-white d-block mb-1">Wireframes</strong>
-                            <small class="text-white-50">Precise structural schematics of how it works.</small>
-                        </div>
-                        <div class="col-sm-6">
-                            <i class="bi bi-book text-primary fs-4 mb-2 d-block"></i>
-                            <strong class="text-white d-block mb-1">Dev Bible</strong>
-                            <small class="text-white-50">Clear instructions manual, not a riddle.</small>
+                        <div class="text-center mt-4">
+                            <i class="bi bi-compass-fill display-4" style="color: #6cf0ff;"></i>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-lg-6 mb-4">
-                <div class="card p-4 h-100 shadow-lg text-center" style="background-color: #1a1a1a; border-top: 5px solid #6cf0ff;">
-                    
-                    <div class="d-flex justify-content-between align-items-start mb-3 w-100">
-                        <span class="badge bg-primary px-3 py-2">FOR EXISTING PRODUCTS</span>
-                        <strong class="text-white border border-secondary px-3 py-1 rounded">2 Weeks</strong>
-                    </div>
-
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
-                             <i class="bi bi-heart-pulse-fill display-4 text-primary"></i>
-                             <h3 class="fw-bold text-white mb-0">SURGICAL OPTIMIZATION</h3>
-                        </div>
-                        <p class="text-white-75 small mx-auto mb-1" style="max-width: 80%;">
-                            Your product is leaking users. I find the leak and plug it with precise design logic.
+                <div class="col-md-6 mb-4">
+                     <div class="p-5 border border-secondary rounded-3 h-100 text-center">
+                        <h3 class="fw-bold mb-3 text-white">The Wrong Way: <br><strong>"Let's Just Start Coding"</strong></h3>
+                        <p class="text-white-50 fs-5">
+                            Most startups skip the architecture. They hire developers immediately. The result? They build features nobody wants, run out of money halfway, and end up with "Spaghetti Code" that needs to be rewritten.
                         </p>
-                    </div>
-
-                    <hr class="border-secondary mt-2 mb-4 w-50 mx-auto">
-
-                    <div class="row gy-4 gx-2">
-                        <div class="col-sm-6">
-                            <i class="bi bi-activity text-primary fs-4 mb-2 d-block"></i>
-                            <strong class="text-white d-block mb-1">MRI Scan (Audit)</strong>
-                            <small class="text-white-50">Diagnosing exactly where users get stuck.</small>
-                        </div>
-                        <div class="col-sm-6">
-                            <i class="bi bi-cone-striped text-primary fs-4 mb-2 d-block"></i>
-                            <strong class="text-white d-block mb-1">Friction Removal</strong>
-                            <small class="text-white-50">Eliminating confused steps that kill conversion.</small>
-                        </div>
-                        <div class="col-sm-6">
-                            <i class="bi bi-arrow-repeat text-primary fs-4 mb-2 d-block"></i>
-                            <strong class="text-white d-block mb-1">Flow Redesign</strong>
-                            <small class="text-white-50">Rebuilding the logic of critical screens.</small>
-                        </div>
-                        <div class="col-sm-6">
-                            <i class="bi bi-tools text-primary fs-4 mb-2 d-block"></i>
-                            <strong class="text-white d-block mb-1">The Fix Kit</strong>
-                            <small class="text-white-50">Ready-to-implement updates for immediate deploy.</small>
+                        <div class="text-center mt-4">
+                             <i class="bi bi-dice-5-fill display-4" style="color: #6cf0ff;"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section id="services" class="bg-black pt-3 pb-5">
+        <div class="container-fluid px-lg-5">
+            <h2 class="text-center fw-bold display-5 mb-5" style="color: #6cf0ff;">MY SERVICES.</h2>
+
+            <div class="row justify-content-center g-4">
+                
+                <div class="col-xl-5 col-lg-6 mb-4">
+                    <div class="card p-4 h-100 shadow-lg" style="background-color: #1a1a1a; border-top: 5px solid #6cf0ff;">
+                        <div class="d-flex justify-content-between align-items-start mb-3 w-100">
+                            <span class="badge bg-primary px-3 py-2">FOR NEW VENTURES</span>
+                            <strong class="text-white border border-secondary px-3 py-1 rounded">2 Weeks</strong>
+                        </div>
+
+                        <div class="mb-2 text-center">
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                 <i class="bi bi-box-seam-fill display-4 text-primary"></i>
+                                 <h3 class="fw-bold text-white mb-0">GENESIS ARCHITECTURE</h3>
+                            </div>
+                            <p class="text-white-75 small mx-auto mb-1" style="max-width: 80%;">
+                                Don't build a spaceship when you need a bicycle. Strategic foundation to launch fast.
+                            </p>
+                        </div>
+                        
+                        <hr class="border-secondary mt-2 mb-4 w-50 mx-auto">
+
+                        <div class="row gy-4 gx-2 text-center">
+                            <div class="col-sm-6">
+                                <i class="bi bi-scissors text-primary fs-4 mb-2 d-block"></i>
+                                <strong class="text-white d-block mb-1">The "Money-Saver"</strong>
+                                <small class="text-white-50">Ruthlessly cutting 40% of unnecessary features.</small>
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="bi bi-diagram-3 text-primary fs-4 mb-2 d-block"></i>
+                                <strong class="text-white d-block mb-1">Logic Map</strong>
+                                <small class="text-white-50">Mapping every click, error state, and user flow.</small>
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="bi bi-grid-3x3 text-primary fs-4 mb-2 d-block"></i>
+                                <strong class="text-white d-block mb-1">Wireframes</strong>
+                                <small class="text-white-50">Precise structural schematics of how it works.</small>
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="bi bi-book text-primary fs-4 mb-2 d-block"></i>
+                                <strong class="text-white d-block mb-1">Dev Bible</strong>
+                                <small class="text-white-50">Clear instructions manual, not a riddle.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-5 col-lg-6 mb-4">
+                    <div class="card p-4 h-100 shadow-lg" style="background-color: #1a1a1a; border-top: 5px solid #6cf0ff;">
+                        <div class="d-flex justify-content-between align-items-start mb-3 w-100">
+                            <span class="badge bg-primary px-3 py-2">FOR EXISTING PRODUCTS</span>
+                            <strong class="text-white border border-secondary px-3 py-1 rounded">2 Weeks</strong>
+                        </div>
+
+                        <div class="mb-2 text-center">
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                 <i class="bi bi-heart-pulse-fill display-4 text-primary"></i>
+                                 <h3 class="fw-bold text-white mb-0">SURGICAL OPTIMIZATION</h3>
+                            </div>
+                            <p class="text-white-75 small mx-auto mb-1" style="max-width: 80%;">
+                                Your product is leaking users. I find the leak and plug it with precise design logic.
+                            </p>
+                        </div>
+
+                        <hr class="border-secondary mt-2 mb-4 w-50 mx-auto">
+
+                        <div class="row gy-4 gx-2 text-center">
+                            <div class="col-sm-6">
+                                <i class="bi bi-activity text-primary fs-4 mb-2 d-block"></i>
+                                <strong class="text-white d-block mb-1">MRI Scan (Audit)</strong>
+                                <small class="text-white-50">Diagnosing exactly where users get stuck.</small>
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="bi bi-cone-striped text-primary fs-4 mb-2 d-block"></i>
+                                <strong class="text-white d-block mb-1">Friction Removal</strong>
+                                <small class="text-white-50">Eliminating confused steps that kill conversion.</small>
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="bi bi-arrow-repeat text-primary fs-4 mb-2 d-block"></i>
+                                <strong class="text-white d-block mb-1">Flow Redesign</strong>
+                                <small class="text-white-50">Rebuilding the logic of critical screens.</small>
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="bi bi-tools text-primary fs-4 mb-2 d-block"></i>
+                                <strong class="text-white d-block mb-1">The Fix Kit</strong>
+                                <small class="text-white-50">Ready-to-implement updates for immediate deploy.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="process" class="bg-dark pt-3 pb-5" style="background-color: #0d1a26;">
         <div class="container">
-            <h2 class="text-center mb-5 text-white" style="font-size: 2.2rem;">SIMPLE 3-STEP PROCESS</h2>
+            <h2 class="text-center mb-5 text-white" style="font-size: 2.5rem;">SIMPLE 3-STEP PROCESS</h2>
             
             <div class="row text-center justify-content-center">
                 
@@ -247,7 +291,7 @@
 
     <section id="contact" class="bg-black py-4">
         <div class="container">
-            <h2 class="text-center mb-3" style="color: #6cf0ff; font-size: 2.2rem;">READY TO START?</h2>
+            <h2 class="text-center mb-3" style="color: #6cf0ff; font-size: 2.5rem;">READY TO START?</h2>
             <div class="row justify-content-center">
                 <div class="col-md-7">
                     <form action="#" method="POST" class="p-4 rounded-3 shadow-lg" style="background-color: #1a2a35;"> 
@@ -270,37 +314,36 @@
         </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <section id="lets-talk" class="py-5" style="background-color: #000000; border-top: 1px solid #333;">
+        <div class="container text-center">
+            <h2 class="mb-4 text-white" style="font-size: 2rem; font-weight: 600;">LET'S TALK</h2>
+            <div class="contact-details d-flex justify-content-center flex-wrap gap-4">
+                
+                <div class="contact-item">
+                    <i class="bi bi-envelope-fill" style="color: #6cf0ff !important; font-size: 1.5rem; margin-right: 10px;"></i>
+                    <a href="mailto:keren.kalev@gmail.com" style="color: #a0a0a0; text-decoration: none;">Email Me</a>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="bi bi-calendar-check-fill" style="color: #6cf0ff !important; font-size: 1.5rem; margin-right: 10px;"></i>
+                    <a href="https://calendly.com/keren-kalev" target="_blank" style="color: #a0a0a0; text-decoration: none;">Schedule a Call</a>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="bi bi-linkedin" style="color: #6cf0ff !important; font-size: 1.5rem; margin-right: 10px;"></i>
+                    <a href="https://www.linkedin.com/company/keren-kalev-levy-group" target="_blank" style="color: #a0a0a0; text-decoration: none;">Connect on LinkedIn</a>
+                </div>
 
-<section id="lets-talk" class="py-5" style="background-color: #000000; border-top: 1px solid #333;">
-    <div class="container text-center">
-        <h2 class="mb-4 text-white" style="font-size: 2rem; font-weight: 600;">LET'S TALK</h2>
-        <div class="contact-details d-flex justify-content-center flex-wrap gap-4">
-            
-            <div class="contact-item">
-                <i class="bi bi-envelope-fill" style="color: #6cf0ff !important; font-size: 1.5rem; margin-right: 10px;"></i>
-                <a href="mailto:keren.kalev@gmail.com" style="color: #a0a0a0;">Email Me</a>
             </div>
-            
-            <div class="contact-item">
-                <i class="bi bi-calendar-check-fill" style="color: #6cf0ff !important; font-size: 1.5rem; margin-right: 10px;"></i>
-                <a href="https://calendly.com/keren-kalev" target="_blank" style="color: #a0a0a0;">Schedule a Call (Calendly)</a>
-            </div>
-            
-            <div class="contact-item">
-                <i class="bi bi-linkedin" style="color: #6cf0ff !important; font-size: 1.5rem; margin-right: 10px;"></i>
-                <a href="https://www.linkedin.com/company/keren-kalev-levy-group" target="_blank" style="color: #a0a0a0;">Connect on LinkedIn</a>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<footer class="text-white-50 py-4" style="background-color: #000000;">
-    <div class="container text-center">
-        <small>&copy; 2025 Lumio Product Lab. All Rights Reserved. | <a href="#" class="text-white-50">Privacy Policy</a></small>
-    </div>
-</footer>
+    <footer class="text-white-50 py-4" style="background-color: #000000;">
+        <div class="container text-center">
+            <small>&copy; 2025 Lumio Product Lab. All Rights Reserved.</small>
+        </div>
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
