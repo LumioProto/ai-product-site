@@ -50,6 +50,49 @@
 
         strong { font-weight: 600; color: #fff; }
 
+        /* --- IMAGE STYLING (NEW) --- */
+        .profile-img-container {
+            position: relative;
+            display: inline-block;
+            padding: 10px;
+        }
+        
+        /* This creates the elegant border effect */
+        .profile-img-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid var(--accent-color);
+            border-radius: 12px;
+            transform: translate(10px, 10px); /* Offset border effect */
+            z-index: 0;
+            opacity: 0.6;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img-container:hover::before {
+            transform: translate(5px, 5px);
+        }
+
+        .profile-img {
+            position: relative;
+            z-index: 1;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 350px; /* Controls image size */
+            height: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            filter: grayscale(20%) contrast(110%); /* Slight filter to blend with dark theme */
+            transition: filter 0.3s ease;
+        }
+
+        .profile-img:hover {
+            filter: grayscale(0%) contrast(100%);
+        }
+
         /* --- NAVBAR LINKS STYLING --- */
         .navbar-nav .nav-link {
             font-family: 'Raleway', sans-serif;
@@ -176,7 +219,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center"> 
                     <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#process">THE PROCESS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#process">PROCESS</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
                     <li class="nav-item"><a class="nav-link btn btn-sm btn-primary ms-3 px-4" href="#contact" style="color: var(--bg-color); background-color: var(--accent-color); border: none;">APPLY</a></li>
                 </ul>
@@ -201,6 +245,45 @@
             </div>
         </div>
     </header>
+
+    <section id="about" class="py-5" style="background-color: #131b29;">
+        <div class="container py-lg-4">
+            <div class="row align-items-center flex-column-reverse flex-lg-row">
+                
+                <div class="col-lg-6 mt-5 mt-lg-0 pe-lg-5">
+                    <span style="color: var(--accent-color); font-family: 'Raleway'; letter-spacing: 2px; font-size: 0.9rem; font-weight: 600;">THE ARCHITECT</span>
+                    <h2 class="mb-4 mt-2">HI, I'M KEREN.</h2>
+                    <p class="lead" style="color: #e2e8f0; font-weight: 400;">
+                        I translate abstract vision into concrete product logic.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 25px;">
+                        With a background in Computer Science (Microsoft) and Product Management at top-tier tech companies (AppsFlyer, IronSource), I've seen too many startups fail because they started coding before they started thinking.
+                    </p>
+                    <p style="color: var(--text-muted);">
+                        My job is to be the bridge. I take your chaotic ideas and structure them into a coherent, dev-ready blueprint. I don't just "manage" products; I architect the foundation so your team can build safely and scalable.
+                    </p>
+                    
+                    <div class="mt-4 pt-2 border-top border-secondary" style="display: flex; gap: 30px;">
+                        <div>
+                            <strong class="d-block fs-3 text-white">10+</strong>
+                            <small style="color: var(--text-muted); text-transform: uppercase; font-size: 0.75rem;">Years Exp</small>
+                        </div>
+                        <div>
+                            <strong class="d-block fs-3 text-white">MVP</strong>
+                            <small style="color: var(--text-muted); text-transform: uppercase; font-size: 0.75rem;">Specialist</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 text-center text-lg-end">
+                    <div class="profile-img-container">
+                        <img src="7.jpg" alt="Keren Kalev" class="profile-img">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <section id="why-me" class="py-5">
         <div class="container">
