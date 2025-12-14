@@ -10,7 +10,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         /* --- GLOBAL SETTINGS --- */
@@ -22,15 +22,16 @@
             text-rendering: optimizeLegibility;
         }
 
-        /* --- TYPOGRAPHY (The Blueprint Look) --- */
+        /* --- TYPOGRAPHY (Professional & Geometric) --- */
         h1, h2, h3, .navbar-brand, .badge, .btn {
-            font-family: 'Rajdhani', sans-serif !important;
+            font-family: 'Montserrat', sans-serif !important;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px; /* Slightly reduced spacing for a tighter, stronger look */
         }
         
-        h1 { font-weight: 700; }
-        h2 { font-weight: 600; }
+        h1 { font-weight: 800; } /* Extra bold for main title */
+        h2 { font-weight: 700; }
+        h3 { font-weight: 700; }
 
         /* --- COLORS --- */
         .text-primary { color: #6cf0ff !important; } /* Neon Cyan */
@@ -49,7 +50,6 @@
         }
 
         /* --- SCROLL FIX --- */
-        /* Stops the scroll exactly 60px above the section title */
         section {
             scroll-margin-top: 60px;
         }
@@ -80,7 +80,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #0d1a26; border-bottom: 1px solid #1f2d3d;">
         <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="#" style="color: #6cf0ff; font-size: 1.5rem;">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#" style="color: #6cf0ff; letter-spacing: 1px;">
                 <img src="logo1.png" alt="Lumio Logo" style="height: 35px; margin-right: 12px;">
                 LUMIO PRODUCT LAB
             </a>
