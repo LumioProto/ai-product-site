@@ -50,22 +50,24 @@
 
         strong { font-weight: 600; color: #fff; }
 
-        /* --- NEW: CIRCULAR IMAGE STYLING --- */
+        /* --- REVISED CIRCULAR IMAGE STYLING --- */
         .profile-img-circle-container {
-            width: 150px; /* Increased size slightly for better visibility */
-            height: 150px;
-            border-radius: 50%; /* Makes it a perfect circle */
-            overflow: hidden; /* Crops the image to the circle */
-            border: 3px solid var(--accent-color); /* Elegant accent border */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            margin-right: 30px; /* Adds space between image and text */
-            flex-shrink: 0; /* Prevents image from shrinking */
+            width: 200px; /* Increased size for better presence */
+            height: 200px;
+            border-radius: 50%; 
+            overflow: hidden; 
+            border: 3px solid var(--accent-color); 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            /* Removed margin-right, spacing is now handled by bootstrap grid gutters */
         }
 
         .profile-img-circle {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures image fills the circle without distortion */
+            object-fit: cover; 
+            /* CRITICAL FIX: This ensures the top of the head is never cut off. 
+               It forces the image to align to the top, cropping only from the bottom. */
+            object-position: top center;
             filter: grayscale(10%) contrast(105%);
         }
 
@@ -79,8 +81,8 @@
             transition: color 0.3s ease;
             text-transform: uppercase;
             margin-left: 15px;
-            padding-top: 0 !important;   /* Fix alignment */
-            padding-bottom: 0 !important; /* Fix alignment */
+            padding-top: 0 !important;   
+            padding-bottom: 0 !important; 
         }
         .navbar-nav .nav-link:hover {
             color: var(--accent-color) !important;
@@ -107,9 +109,10 @@
             border: 1px solid var(--accent-color);
             color: var(--accent-color);
         }
+        
         .btn-primary:hover {
             background-color: var(--accent-color);
-            color: var(--bg-color);
+            color: var(--bg-color) !important; 
             border-color: var(--accent-color);
             box-shadow: 0 0 15px rgba(212, 194, 145, 0.3);
         }
@@ -256,15 +259,20 @@
 
     <section id="about" class="py-5" style="background-color: #131b29;">
         <div class="container py-lg-4">
-            <div class="d-lg-flex align-items-start text-center text-lg-start">
+            
+            <h2 class="text-center mb-5 display-5">THE ARCHITECT.</h2>
+
+            <div class="row align-items-center gx-5">
                 
-                <div class="profile-img-circle-container mx-auto ms-lg-0 mb-4 mb-lg-0">
-                    <img src="profile.jpg" alt="Keren Kalev" class="profile-img-circle">
+                <div class="col-lg-4 text-center text-lg-end mb-4 mb-lg-0">
+                    <div class="profile-img-circle-container d-inline-block">
+                        <img src="7.jpg" alt="Keren Kalev" class="profile-img-circle">
+                    </div>
                 </div>
                 
-                <div class="flex-grow-1">
-                    <span style="color: var(--accent-color); font-family: 'Raleway'; letter-spacing: 2px; font-size: 0.9rem; font-weight: 600;">THE ARCHITECT</span>
-                    <h2 class="mb-3 mt-2" style="font-size: 1.6rem;">HI, I'M KEREN.</h2>
+                <div class="col-lg-8 text-center text-lg-start">
+                    
+                    <h3 class="mb-3" style="color: var(--accent-color); letter-spacing: 1px;">HI, I'M KEREN.</h3>
                     
                     <p class="lead" style="color: #e2e8f0; font-weight: 400; max-width: 800px;">
                         I translate abstract vision into concrete product logic.
@@ -277,7 +285,7 @@
                         My job is to be the bridge. I take your chaotic ideas and structure them into a coherent, dev-ready blueprint. I don't just "manage" products; I architect the foundation so your team can build safely and scalable.
                     </p>
                     
-                    <div class="mt-4 pt-3 border-top border-secondary d-flex gap-5 justify-content-center justify-content-lg-start">
+                    <div class="mt-4 pt-4 border-top border-secondary d-flex gap-5 justify-content-center justify-content-lg-start">
                         <div>
                             <strong class="d-block fs-3 text-white">10+</strong>
                             <small style="color: var(--text-muted); text-transform: uppercase; font-size: 0.75rem;">Years Exp</small>
