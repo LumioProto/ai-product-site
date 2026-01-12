@@ -13,53 +13,69 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600&family=Inter:wght@300;400;500;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- COLOR PALETTE --- */
         :root {
             --bg-color: #0f1623; 
             --card-bg: rgba(255, 255, 255, 0.03); 
             --accent-color: #d4c291; 
             --text-main: #f1f5f9; 
             --text-muted: #cbd5e1; 
-            --blue-path: #4a90e2;
+            --blue-track: #4a90e2;
         }
 
-        /* --- GLOBAL SETTINGS --- */
         html { scroll-behavior: smooth; scroll-padding-top: 80px; }
         body { background-color: var(--bg-color); color: var(--text-main); font-family: 'Assistant', sans-serif; font-weight: 300; line-height: 1.6; }
 
-        /* --- TYPOGRAPHY --- */
-        h1, h2, h3, .navbar-brand, .btn, .badge-corner, .stat-header, .company-text { font-family: 'Raleway', sans-serif; text-transform: uppercase; letter-spacing: 2px; color: #fff; }
+        h1, h2, h3, .navbar-brand, .btn, .badge-corner, .stat-header {
+            font-family: 'Raleway', sans-serif; text-transform: uppercase; letter-spacing: 2px; color: #fff;
+        }
+        
         h1 { font-weight: 300; font-size: 2.8rem !important; } 
         h2 { font-weight: 400; font-size: 1.8rem !important; }
         h3 { font-weight: 500; font-size: 1.3rem !important; }
-        strong { font-weight: 600; color: #fff !important; }
 
-        /* --- CARDS & VISIBILITY --- */
-        .card { background-color: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 4px; transition: transform 0.4s ease, border-color 0.4s ease; position: relative; overflow: visible; }
-        .card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+        .card {
+            background-color: #161e2b;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            transition: transform 0.4s ease;
+            position: relative; 
+            overflow: visible;
+        }
         
-        /* Ensuring all card text is visible */
-        .card p { color: #fff !important; }
-        .card small { color: #cbd5e1 !important; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .card strong { white-space: nowrap; display: block; overflow: hidden; text-overflow: ellipsis; }
+        .badge-corner {
+            position: absolute; top: 20px; left: 20px;
+            background-color: rgba(212, 194, 145, 0.1) !important;
+            color: var(--accent-color) !important;
+            border: 1px solid rgba(212, 194, 145, 0.3);
+            font-weight: 600; padding: 6px 12px; font-size: 0.75rem; border-radius: 4px;
+        }
 
-        .badge-corner { position: absolute; top: 20px; left: 20px; background-color: rgba(212, 194, 145, 0.1) !important; color: var(--accent-color) !important; border: 1px solid rgba(212, 194, 145, 0.3); font-weight: 600; letter-spacing: 1px; padding: 6px 12px; font-size: 0.75rem; border-radius: 4px; }
-        .time-corner { position: absolute; top: 20px; right: 20px; color: var(--text-muted); font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 50px; }
+        .time-corner {
+            position: absolute; top: 20px; right: 20px;
+            color: var(--text-muted); font-size: 0.8rem;
+            border: 1px solid rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 50px;
+        }
 
-        /* Flow Chart Connection */
-        .chart-connector { position: absolute; right: -25px; top: 50%; transform: translateY(-50%); color: var(--accent-color); font-size: 1.5rem; z-index: 10; }
+        /* Chart Connector */
+        .chart-arrow {
+            position: absolute; right: -25px; top: 50%;
+            transform: translateY(-50%); color: var(--accent-color);
+            font-size: 1.5rem; z-index: 10;
+        }
 
-        /* Next Step Fork */
-        .step-fork { display: flex; gap: 10px; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; }
-        .fork-box { flex: 1; text-align: center; font-size: 0.7rem; padding: 5px; border: 1px dashed rgba(255,255,255,0.2); }
-        .fork-box.active { border-color: var(--accent-color); color: var(--accent-color); }
+        /* Constraint for subtitles */
+        .card strong { white-space: nowrap; display: block; }
+        .card small { 
+            display: -webkit-box; -webkit-line-clamp: 2; 
+            -webkit-box-orient: vertical; overflow: hidden; height: 2.8em; 
+        }
 
         .profile-img-circle-container { width: 200px; height: 200px; border-radius: 50%; overflow: hidden; border: 3px solid var(--accent-color); box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
         .profile-img-circle { width: 100%; height: 100%; object-fit: cover; filter: grayscale(10%) contrast(105%); }
         .stat-block { text-align: center; padding-right: 25px; margin-right: 25px; border-right: 1px solid rgba(255,255,255,0.1); }
         .stat-block:last-child { border-right: none; }
         .stat-num { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 2rem; color: #fff; display: block; }
-        .card-content-spacer { margin-top: 35px; }
+        .card-content-spacer { margin-top: 30px; }
     </style>
 </head>
 <body class="bg-dark text-light">
@@ -82,14 +98,10 @@
         </div>
     </nav>
 
-    <header id="home" class="hero-section text-center d-flex align-items-center" style="min-height: 90vh; background: linear-gradient(rgba(15,22,35,0.9), rgba(15,22,35,0.8)), url('https://picsum.photos/1920/1080?random=3&blur=2'); background-size: cover;">
+    <header id="home" class="hero-section text-center d-flex align-items-center" style="min-height: 90vh;">
         <div class="container py-5">
             <h1 class="mb-4">Don't write a single line of code<br><span style="color: var(--accent-color); font-weight: 400;">Until you have a blueprint.</span></h1>
-            <p class="lead mb-5" style="color: var(--text-muted); max-width: 650px; margin: 0 auto;">I provide strategic certainty for founders and scale-ups. Define exactly <strong>what</strong> to build, before you burn cash on <strong>how</strong> to build it.</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#services" class="btn btn-primary">VIEW SERVICES</a>
-                <a href="#contact" class="btn btn-outline-light">SCHEDULE CALL</a>
-            </div>
+            <p class="lead mb-5" style="color: var(--text-muted); max-width: 650px; margin: 0 auto; font-size: 1.15rem;">I provide strategic certainty for founders and scale-ups.<br>Define exactly <strong>what</strong> to build, before you burn cash on <strong>how</strong> to build it.</p>
         </div>
     </header>
 
@@ -99,32 +111,14 @@
             <div class="row justify-content-center"> 
                 <div class="col-md-6 mb-4">
                     <div class="p-5 h-100 text-center card shadow-none" style="border-top: 3px solid var(--accent-color);">
-                        <h3 class="fw-bold mb-3 text-white">Plan First, Build Later</h3>
-                        <p>It's 10x cheaper to fix a blueprint than to tear down a wall.</p>
+                        <h3 class="fw-bold mb-3 text-white">The Smart Way: <br><span style="color: var(--accent-color)">Plan First, Build Later</span></h3>
+                        <p style="color: #fff !important;">Think of me as the architect of a house. I draw the plans, I check the structure, and I calculate the costs before you hire the construction crew.</p>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="p-5 h-100 text-center card shadow-none" style="border-top: 3px solid #4a5568;">
-                        <h3 class="fw-bold mb-3 text-white">The Wrong Way</h3>
-                        <p>Most startups build features nobody wants and end up with Spaghetti Code.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-5" style="background-color: #131b29;">
-        <div class="container">
-            <h2 class="text-center mb-5 display-5">THE ARCHITECT.</h2>
-            <div class="row align-items-start gx-5">
-                <div class="col-lg-3 text-center mb-4"><div class="profile-img-circle-container d-inline-block"><img src="profile.jpg" alt="Keren Kalev" class="profile-img-circle"></div></div>
-                <div class="col-lg-9 ps-lg-5">
-                    <h2 class="fw-bold text-white">I turn complex ideas into <span style="color: var(--accent-color);">execution-ready blueprints.</span></h2>
-                    <p class="mt-4" style="color: #a0aec0;">Background at Microsoft and as a Product Manager at top-tier companies.</p>
-                    <div class="mt-5 d-flex flex-wrap gap-4 border-top border-secondary pt-4">
-                        <div class="stat-block"><span class="stat-num">7</span><span class="stat-title">DEV</span></div>
-                        <div class="stat-block"><span class="stat-num">5+</span><span class="stat-title">PM</span></div>
-                        <div class="stat-block"><span class="stat-num">3+</span><span class="stat-title">FOUNDER</span></div>
+                        <h3 class="fw-bold mb-3 text-white">The Wrong Way: <br><span style="color: #94a3b8">"Let's Just Start Coding"</span></h3>
+                        <p style="color: #fff !important;">Most startups building features nobody wants, run out of money halfway, and end up with "Spaghetti Code".</p>
                     </div>
                 </div>
             </div>
@@ -137,56 +131,60 @@
             <div class="row justify-content-center g-4">
                 
                 <div class="col-xl-4 col-lg-6 mb-4">
-                    <div class="card p-5 h-100" style="border-top: 4px solid var(--blue-path);">
-                        <span class="badge-corner" style="color: var(--blue-path) !important;">FOR EXISTING PRODUCTS</span>
+                    <div class="card p-5 h-100" style="border-top: 4px solid var(--blue-track);">
+                        <span class="badge-corner" style="color: var(--blue-track) !important;">FOR EXISTING PRODUCTS</span>
+                        <span class="time-corner">Sprint (2 Weeks)</span>
                         <div class="card-content-spacer"></div>
-                        <div class="text-center">
-                            <i class="bi bi-heart-pulse display-4" style="color:var(--blue-path);"></i>
+                        <div class="mb-4 text-center">
+                            <i class="bi bi-heart-pulse display-4" style="color: var(--blue-track);"></i>
                             <h3 class="text-white mt-3">SURGICAL OPTIMIZATION</h3>
                         </div>
                         <hr class="border-secondary mb-4 w-75 mx-auto">
                         <div class="row gy-4">
-                            <div class="col-6 text-start"><i class="bi bi-activity me-1" style="color:var(--blue-path);"></i><strong>MRI Scan</strong><small>Audit of drop-offs.</small></div>
-                            <div class="col-6 text-start"><i class="bi bi-cone-striped me-1" style="color:var(--blue-path);"></i><strong>Friction Fix</strong><small>Logic rebuilding.</small></div>
+                            <div class="col-6 text-start"><i class="bi bi-activity me-1" style="color: var(--blue-track);"></i><strong style="color:#fff!important">MRI Scan</strong><small style="color:#cbd5e1!important">Audit of drop-offs.</small></div>
+                            <div class="col-6 text-start"><i class="bi bi-cone-striped me-1" style="color: var(--blue-track);"></i><strong style="color:#fff!important">Friction Fix</strong><small style="color:#cbd5e1!important">Logic rebuilding.</small></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xl-4 col-lg-6 mb-4">
                     <div class="card p-5 h-100" style="border-top: 4px solid var(--accent-color);">
-                        <div class="chart-connector d-none d-xl-block"><i class="bi bi-arrow-right"></i></div>
+                        <div class="chart-arrow d-none d-xl-block"><i class="bi bi-arrow-right"></i></div>
                         <span class="badge-corner">THE DISCOVERY</span>
+                        <span class="time-corner">4-Hour Intensive</span>
                         <div class="card-content-spacer"></div>
-                        <div class="text-center">
+                        <div class="mb-4 text-center">
                             <i class="bi bi-lightning-charge-fill display-4 text-primary"></i>
-                            <h3 class="text-white mt-3">DNA MAPPING</h3>
+                            <h3 class="text-white mt-3">THE DNA MAPPING</h3>
                         </div>
                         <hr class="border-secondary mb-4 w-75 mx-auto">
                         <div class="row gy-4">
-                            <div class="col-6 text-start"><i class="bi bi-layers-half text-primary me-1"></i><strong>Deconstruct</strong><small>Test assumptions.</small></div>
-                            <div class="col-6 text-start"><i class="bi bi-map text-primary me-1"></i><strong>Mapping</strong><small>Visual Journey.</small></div>
+                            <div class="col-6 text-start"><i class="bi bi-layers-half text-primary me-1"></i><strong style="color:#fff!important">Deconstruct</strong><small style="color:#cbd5e1!important">Test assumptions.</small></div>
+                            <div class="col-6 text-start"><i class="bi bi-map text-primary me-1"></i><strong style="color:#fff!important">Mapping</strong><small style="color:#cbd5e1!important">Visual Journey.</small></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xl-4 col-lg-6 mb-4">
-                    <div class="card p-5 h-100" style="border-top: 4px solid var(--accent-color);">
+                    <div class="card p-5 h-100" style="border-top: 4px solid var(--accent-color); background: rgba(212, 194, 145, 0.02);">
                         <span class="badge-corner">THE ARCHITECT</span>
                         <span class="time-corner">1-2 SPRINTS</span>
                         <div class="card-content-spacer"></div>
-                        <div class="text-center">
+                        <div class="mb-4 text-center">
                             <i class="bi bi-box-seam display-4 text-primary"></i>
                             <h3 class="text-white mt-3">GENESIS ARCHITECTURE</h3>
                         </div>
                         <hr class="border-secondary mb-4 w-75 mx-auto">
                         <div class="row gy-4">
-                            <div class="col-6 text-start"><i class="bi bi-diagram-3 text-primary me-1"></i><strong>Logic Map</strong><small>Every click/rule.</small></div>
-                            <div class="col-6 text-start"><i class="bi bi-book text-primary me-1"></i><strong>Dev Bible</strong><small>Precise PRD.</small></div>
+                            <div class="col-6 text-start"><i class="bi bi-diagram-3 text-primary me-1"></i><strong style="color:#fff!important">Logic Map</strong><small style="color:#cbd5e1!important">Every click/rule.</small></div>
+                            <div class="col-6 text-start"><i class="bi bi-book text-primary me-1"></i><strong style="color:#fff!important">Dev Bible</strong><small style="color:#cbd5e1!important">Precise PRD.</small></div>
                         </div>
-                        
-                        <div class="step-fork text-center">
-                            <div class="fork-box"><i class="bi bi-arrow-down d-block"></i>Studio Hand-off</div>
-                            <div class="fork-box active"><i class="bi bi-arrow-down d-block"></i>Rapid Prototype</div>
+                        <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <p class="text-center small mb-2" style="color:#fff!important"><strong>NEXT STEP OPTIONS:</strong></p>
+                            <div class="d-flex gap-2">
+                                <div style="flex:1; text-align:center; font-size:0.75rem; border:1px dashed #444; padding:5px;"><i class="bi bi-arrow-down d-block"></i>Studio Hand-off</div>
+                                <div style="flex:1; text-align:center; font-size:0.75rem; border:1px solid var(--accent-color); padding:5px; color:var(--accent-color);"><i class="bi bi-arrow-down d-block"></i>Rapid Prototype</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -194,18 +192,6 @@
         </div>
     </section>
 
-    <section id="process" class="py-5">
-        <div class="container text-center">
-            <h2 class="mb-5">THE PROCESS.</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4"><h3>I LEARN.</h3><p>You download your brain.</p></div>
-                <div class="col-md-4 mb-4"><h3>I PLAN.</h3><p>I turn it into a structure.</p></div>
-                <div class="col-md-4 mb-4"><h3>YOU BUILD.</h3><p>You receive the Blueprint.</p></div>
-            </div>
-        </div>
-    </section>
-
     <footer class="py-4 text-center border-top border-secondary"><small>&copy; 2025 Lumio Product Lab.</small></footer>
-
 </body>
 </html>
