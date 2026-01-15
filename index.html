@@ -55,6 +55,19 @@
         }
         .card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
 
+        /* חץ יוצא מ-Surgical Optimization */
+        .surgical-card::after {
+            content: "\F128"; /* bi-arrow-down */
+            font-family: "bootstrap-icons";
+            position: absolute;
+            bottom: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: #4a90e2;
+            z-index: 100;
+        }
+
         .btn {
             font-weight: 600;
             letter-spacing: 1px;
@@ -244,13 +257,13 @@
 
                 <div class="col-xl-4 col-lg-6 text-start">
                     <div class="text-center mb-2"><span class="step-label">I BUILD</span></div>
-                    <div class="card p-5 h-100 justify-content-center align-items-center text-center" style="border: 2px dashed var(--accent-color);">
+                    <div class="card p-5 h-100 text-center" style="border: 2px dashed var(--accent-color); justify-content: flex-start; padding-top: 60px !important;">
                         <span class="badge-corner">PREMIUM BETA</span><span class="time-corner">Rapid Build</span>
                         <i class="bi bi-cpu display-5 text-primary mb-3"></i>
                         <h3 class="text-white mb-2">RAPID PROTOTYPING</h3>
                         <p class="small text-white opacity-90 mb-4">Functional validation model in record time built directly from your blueprint.</p>
                         
-                        <a href="#contact" class="btn btn-primary w-100 py-3">START BUILDING</a>
+                        <a href="#contact" class="btn btn-primary w-100 py-3 mt-auto">START BUILDING</a>
                         
                         <p class="small text-white opacity-75 mt-4">Currently running a premium beta for Rapid Prototyping.</p>
                     </div>
@@ -262,7 +275,7 @@
             <div class="row justify-content-center g-4">
                 <div class="col-xl-4 col-lg-6 position-relative text-start">
                     <div class="text-center mb-2"><span class="step-label">I LEARN, I PLAN</span></div>
-                    <div class="card p-5 h-100" style="border-top: 4px solid #4a90e2;">
+                    <div class="card p-5 h-100 surgical-card" style="border-top: 4px solid #4a90e2;">
                         <span class="badge-corner" style="color:#4a90e2!important; border-color:#4a90e2">OPTIMIZATION</span><span class="time-corner">2 Sprints</span>
                         <div class="text-center mt-3 mb-4">
                             <i class="bi bi-heart-pulse display-5 text-blue"></i>
