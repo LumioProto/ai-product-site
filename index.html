@@ -22,7 +22,7 @@
         }
 
         html { scroll-behavior: smooth; }
-        section { scroll-margin-top: 160px; }
+        section { scroll-margin-top: 170px; }
 
         body {
             background-color: var(--bg-color);
@@ -56,7 +56,7 @@
         }
         .card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
 
-        /* חצים חיצוניים - שורה 1 */
+        /* חצים חיצוניים בשורה 1 */
         @media (min-width: 1200px) {
             .arrow-step::after {
                 content: "\F135"; 
@@ -141,6 +141,7 @@
             <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
                 <img src="linkedinlogo5.png" alt="Lumio Logo" style="height: 45px; margin-right: 12px; border-radius: 50%;"> LUMIO PRODUCT LAB
             </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center"> 
                     <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
@@ -156,7 +157,10 @@
     <header id="home" class="hero-section text-center d-flex align-items-center" style="min-height: 90vh;">
         <div class="container py-5">
             <h1 class="mb-4">Don't write a single line of code<br><span style="color: var(--accent-color); font-weight: 400;">Until you have a blueprint.</span></h1>
-            <p class="lead mb-5" style="color: var(--text-muted); max-width: 800px; margin: 0 auto;">Define exactly <strong>what</strong> to build, before you burn cash on <strong>how</strong> to build it.</p>
+            <p class="lead mb-5" style="color: var(--text-muted); max-width: 800px; margin: 0 auto; font-size: 1.15rem; line-height: 1.6;">
+                I provide strategic certainty for founders and scale-ups.<br>
+                Define exactly <strong>what</strong> to build, before you burn cash on <strong>how</strong> to build it.
+            </p>
             <div class="d-flex justify-content-center gap-3"><a href="#services" class="btn btn-primary px-5">VIEW SERVICES</a><a href="#contact" class="btn btn-outline-light px-5">SCHEDULE</a></div>
         </div>
     </header>
@@ -169,7 +173,7 @@
                     <div class="p-5 h-100 text-center card shadow-none" style="border-top: 3px solid var(--accent-color);">
                         <h3 class="fw-bold mb-3 text-white">The Smart Way: <br><span style="color: var(--accent-color)">Plan First, Build Later</span></h3>
                         <p style="color: var(--text-muted);">Think of me as the architect of a house. I draw the plans, I check the structure, and I calculate the costs <strong>before</strong> you hire the construction crew. It's 10x cheaper to fix a blueprint than to tear down a wall.</p>
-                        <div class="text-center mt-4"><i class="bi bi-compass display-4" style="color:var(--accent-color)"></i></div>
+                        <div class="text-center mt-4"><i class="bi bi-compass display-4" style="color:var(--accent-color)!important"></i></div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
@@ -213,7 +217,7 @@
                     <div class="text-center mb-2"><span class="step-label">I LEARN</span></div>
                     <div class="card p-4 arrow-step" style="border: 2px solid var(--accent-color);">
                         <span class="badge-corner">MOST POPULAR</span><span class="time-corner">1 Session</span>
-                        <div class="text-center mt-3 mb-4"><i class="bi bi-lightning-charge-fill display-5" style="color:var(--accent-color)"></i><h3 class="text-white mt-2">THE DNA MAPPING</h3></div>
+                        <div class="text-center mt-3 mb-4"><i class="bi bi-lightning-charge-fill display-5" style="color:var(--accent-color)"></i><h3 class="text-white mt-2">THE DNA MAPPING</h3><p class="small text-white opacity-90">Intensive Whiteboard Workshop. Strategic Clarity. Zero Noise.</p></div>
                         <div class="row gy-3 text-start">
                             <div class="col-12 d-flex gap-3"><i class="bi bi-map text-primary fs-4" style="color:var(--accent-color)!important"></i><div><strong class="text-white d-block">Visual Mapping</strong><small class="text-white opacity-75">Full whiteboard architecture of the User Journey, identifying exactly where friction happens.</small></div></div>
                             <div class="col-12 d-flex gap-3"><i class="bi bi-check-circle text-primary fs-4" style="color:var(--accent-color)!important"></i><div><strong class="text-white d-block">Validation Plan</strong><small class="text-white opacity-75">Designing a specific "No-Code" experiment to prove market demand before investing in development.</small></div></div>
@@ -235,7 +239,7 @@
                     <div class="text-center mb-2"><span class="step-label">I PLAN</span></div>
                     <div class="card p-4 arrow-step" style="border-top: 4px solid var(--accent-color);">
                         <span class="badge-corner">FOR VENTURES</span><span class="time-corner">2 Sprints</span>
-                        <div class="text-center mt-3 mb-4"><i class="bi bi-box-seam display-5" style="color:var(--accent-color)"></i><h3 class="text-white mt-2">GENESIS ARCHITECTURE</h3></div>
+                        <div class="text-center mt-3 mb-4"><i class="bi bi-box-seam display-5" style="color:var(--accent-color)"></i><h3 class="text-white mt-2">GENESIS ARCHITECTURE</h3><p class="small text-white opacity-90">Strategic foundation to launch fast.</p></div>
                         <div class="row gy-4 mb-4 text-start">
                             <div class="col-12 d-flex gap-3"><i class="bi bi-scissors text-primary fs-4" style="color:var(--accent-color)!important"></i><div><strong class="text-white">The "Money-Saver"</strong><small class="text-white opacity-75 d-block">Ruthlessly cutting 40% of unnecessary features.</small></div></div>
                             <div class="col-12 d-flex gap-3"><i class="bi bi-diagram-3 text-primary fs-4" style="color:var(--accent-color)!important"></i><div><strong class="text-white">Logic Map</strong><small class="text-white opacity-75 d-block">Mapping every click, error state, and user flow.</small></div></div>
@@ -251,9 +255,10 @@
                     <div class="card p-4 text-center" style="border: 2px dashed var(--accent-color); display: flex; flex-direction: column;">
                         <span class="badge-corner">PREMIUM BETA</span><span class="time-corner">Rapid Build</span>
                         <div class="mb-4 mt-4"><i class="bi bi-cpu display-5" style="color:var(--accent-color)"></i><h3 class="text-white mt-2">RAPID PROTOTYPING</h3></div>
-                        <div style="margin-top: -25px; margin-bottom: auto;">
+                        <div style="margin-top: -20px; margin-bottom: auto;">
                             <p class="small text-white opacity-90 mb-4">Functional validation model in record time built directly from your blueprint.</p>
                             <a href="#contact" class="btn btn-primary w-100 py-3">START BUILDING</a>
+                            <p class="small text-white opacity-75 mt-4">Currently running a premium beta.</p>
                         </div>
                     </div>
                 </div>
@@ -294,21 +299,21 @@
 
     <section id="contact" class="py-5">
         <div class="container text-center">
-            <h2 class="mb-4">READY TO START?</h2>
+            <h2 class="text-center mb-4">READY TO START?</h2>
             <div class="row justify-content-center">
                 <div class="col-md-7">
                     <form action="#" method="POST" class="p-4 card shadow"> 
-                        <div class="mb-3"><label class="form-label small">Full Name</label><input type="text" class="form-control" required></div>
-                        <div class="mb-3"><label class="form-label small">Email</label><input type="email" class="form-control" required></div>
-                        <div class="mb-3"><label class="form-label small">Challenge</label><textarea class="form-control" rows="2" required></textarea></div>
+                        <div class="mb-3 text-start"><label class="form-label small">Full Name</label><input type="text" class="form-control" required></div>
+                        <div class="mb-3 text-start"><label class="form-label small">Email</label><input type="email" class="form-control" required></div>
+                        <div class="mb-3 text-start"><label class="form-label small">Describe Your Challenge</label><textarea class="form-control" rows="2" required></textarea></div>
                         <button type="submit" class="btn btn-primary w-100 py-3 mb-5" style="background-color: var(--accent-color); color: #000; border: none; font-weight: 700;">APPLY FOR A SPOT</button>
                         
                         <div class="border-top border-secondary pt-4">
-                            <h3 class="mb-4" style="font-size: 1.5rem;">LET'S TALK</h3>
+                            <h3 class="mb-4 text-white" style="font-size: 1.5rem;">LET'S TALK</h3>
                             <div class="d-flex justify-content-center flex-wrap gap-5">
                                 <span><i class="bi bi-envelope" style="color:var(--accent-color)"></i> <a href="mailto:keren.kalev@gmail.com" style="color: var(--text-muted); text-decoration: none;">Email Me</a></span>
                                 <span><i class="bi bi-calendar-check" style="color:var(--accent-color)"></i> <a href="https://calendly.com/keren-kalev" target="_blank" style="color: var(--text-muted); text-decoration: none;">Schedule</a></span>
-                                <span><i class="bi bi-linkedin" style="color:var(--accent-color)"></i> <a href="https://www.linkedin.com" target="_blank" style="color: var(--text-muted); text-decoration: none;">LinkedIn</a></span>
+                                <span><i class="bi bi-linkedin" style="color:var(--accent-color)"></i> <a href="https://www.linkedin.com/company/keren-kalev-levy-group" target="_blank" style="color: var(--text-muted); text-decoration: none;">LinkedIn</a></span>
                             </div>
                         </div>
                     </form>
