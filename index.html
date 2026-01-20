@@ -22,8 +22,6 @@
         }
 
         html { scroll-behavior: smooth; }
-        
-        /* תיקון גלילה בלבד - נחיתה מדויקת */
         section { scroll-margin-top: 60px; }
 
         body {
@@ -57,6 +55,10 @@
             overflow: visible;
         }
         .card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+
+        /* העלמת סקרול בר של קלנדלי */
+        .calendly-inline-widget::-webkit-scrollbar { display: none; }
+        .calendly-inline-widget { -ms-overflow-style: none; scrollbar-width: none; }
 
         @media (min-width: 1200px) {
             .arrow-step::after {
@@ -296,20 +298,32 @@
     </section>
 
     <section id="contact" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">READY TO START?</h2>
+        <div class="container-fluid px-lg-5">
+            <h2 class="text-center mb-5">READY TO START?</h2>
             <div class="row justify-content-center">
-                <div class="col-md-7">
-                    <form action="#" method="POST" class="p-4 rounded-3 card shadow"> 
-                        <div class="mb-3"><label class="form-label text-white small">Full Name</label><input type="text" class="form-control" required></div>
-                        <div class="mb-3"><label class="form-label text-white small">Email</label><input type="email" class="form-control" required></div>
-                        <div class="mb-3"><label class="form-label text-white small">Describe Your Challenge</label><textarea class="form-control" rows="2" required></textarea></div>
-                        <button type="submit" class="btn btn-primary w-100 py-3 mb-5" style="background-color: var(--accent-color); color: #000; border: none; font-weight: 700;">APPLY FOR A SPOT</button>
-                        
-                        <div class="calendly-inline-widget" data-url="https://calendly.com/lumioproductlab/30min?background_color=162301&text_color=d4c291" style="min-width:320px;height:700px;"></div>
-                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                        
-                        <div class="text-center border-top border-secondary pt-4 mt-4">
+                <div class="col-xl-11">
+                    <div class="card p-4 shadow">
+                        <div class="row g-5 align-items-start">
+                            
+                            <div class="col-lg-5 border-end border-secondary border-opacity-25">
+                                <h3 class="mb-4 text-white" style="font-size: 1.1rem; letter-spacing: 1px;">Option 1: Drop your details</h3>
+                                <form action="#" method="POST"> 
+                                    <div class="mb-3"><label class="form-label text-white small">Full Name</label><input type="text" class="form-control" required></div>
+                                    <div class="mb-3"><label class="form-label text-white small">Email</label><input type="email" class="form-control" required></div>
+                                    <div class="mb-3"><label class="form-label text-white small">Describe Your Challenge</label><textarea class="form-control" rows="5" required></textarea></div>
+                                    <button type="submit" class="btn btn-primary w-100 py-3" style="background-color: var(--accent-color); color: #000; border: none; font-weight: 700;">APPLY FOR A SPOT</button>
+                                </form>
+                            </div>
+
+                            <div class="col-lg-7">
+                                <h3 class="mb-4 text-white" style="font-size: 1.1rem; letter-spacing: 1px;">Option 2: Book a session directly</h3>
+                                <div class="calendly-inline-widget" data-url="https://calendly.com/lumioproductlab/30min?background_color=162301&text_color=d4c291" style="min-width:320px;height:800px;"></div>
+                                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                            </div>
+
+                        </div>
+
+                        <div class="text-center border-top border-secondary pt-4 mt-5">
                             <h3 class="text-white mb-4" style="font-size: 1.5rem; letter-spacing: 2px;">LET'S TALK</h3>
                             <div class="contact-details d-flex justify-content-center flex-wrap gap-5">
                                 <div class="contact-item">
@@ -326,7 +340,7 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
