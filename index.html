@@ -23,6 +23,7 @@
 
         html { scroll-behavior: smooth; }
         
+        /* תיקון גלילה בלבד - נחיתה מדויקת */
         section { scroll-margin-top: 60px; }
 
         body {
@@ -57,6 +58,70 @@
         }
         .card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
 
+        @media (min-width: 1200px) {
+            .arrow-step::after {
+                content: "\F135"; 
+                font-family: "bootstrap-icons";
+                position: absolute;
+                right: -25px; 
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 2rem;
+                color: var(--accent-color);
+                z-index: 1000;
+            }
+            .surgical-arrow-fix::after {
+                content: "\F135"; 
+                font-family: "bootstrap-icons";
+                position: absolute;
+                right: -25px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 2rem;
+                color: #4a90e2;
+                z-index: 1000;
+            }
+        }
+
+        @media (max-width: 1199px) {
+            .arrow-step::after, .surgical-arrow-fix::after {
+                content: "\F128"; 
+                font-family: "bootstrap-icons";
+                position: absolute;
+                bottom: -35px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 2rem;
+                z-index: 1000;
+            }
+            .arrow-step::after { color: var(--accent-color); }
+            .surgical-arrow-fix::after { color: #4a90e2; }
+        }
+
+        .deliverables-box {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background-color: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .step-label { color: var(--accent-color); font-weight: 600; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 10px; display: block; }
+        .badge-corner { position: absolute; top: 20px; left: 20px; background-color: rgba(212, 194, 145, 0.1) !important; color: var(--accent-color) !important; border: 1px solid rgba(212, 194, 145, 0.3); font-size: 0.75rem; padding: 6px 12px; border-radius: 4px; }
+        .time-corner { position: absolute; top: 20px; right: 20px; color: var(--text-muted); font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 50px; }
+        
+        .stat-block { text-align: center; padding-right: 25px; margin-right: 25px; border-right: 1px solid rgba(255,255,255,0.1); }
+        .stat-block:last-child { border-right: none; }
+        .stat-num { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 2rem; color: #fff; line-height: 1; display: block; margin-bottom: 5px; }
+        .stat-title { font-family: 'Raleway', sans-serif; font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); text-transform: uppercase; }
+
+        .profile-img-circle-container { width: 200px; height: 200px; border-radius: 50%; overflow: hidden; border: 3px solid var(--accent-color); box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        .profile-img-circle { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+        
+        .hero-section { background: linear-gradient(to bottom, rgba(15, 22, 35, 0.95), rgba(15, 22, 35, 0.85)), url('https://picsum.photos/1920/1080?random=3&blur=2'); background-size: cover; }
+        .form-control { background-color: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #fff; }
+
         .btn-primary {
             background-color: transparent;
             border: 1px solid var(--accent-color);
@@ -68,15 +133,6 @@
             border-color: var(--accent-color);
             box-shadow: 0 0 15px rgba(212, 194, 145, 0.3);
         }
-
-        /* עיצוב ייעודי לקונטיינר של קלנדלי */
-        .calendly-container {
-            background-color: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
-            overflow: hidden;
-            padding: 20px 0;
-        }
     </style>
 </head>
 <body class="bg-dark text-light">
@@ -86,11 +142,14 @@
             <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
                 <img src="linkedinlogo5.png" alt="Lumio Logo" style="height: 45px; margin-right: 12px; border-radius: 50%;"> LUMIO PRODUCT LAB
             </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center"> 
                     <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#edge">THE EDGE</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
-                    <li class="nav-item"><a class="btn btn-sm px-4 ms-3" href="#contact" style="background-color: var(--accent-color); color: #000; font-weight: 700; border: none;">SCHEDULE NOW</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
+                    <li class="nav-item"><a class="btn btn-sm px-4 ms-3" href="#contact" style="background-color: var(--accent-color); color: #000; font-weight: 700; border: none;">APPLY</a></li>
                 </ul>
             </div>
         </div>
@@ -99,26 +158,176 @@
     <header id="home" class="hero-section text-center d-flex align-items-center" style="min-height: 90vh;">
         <div class="container py-5">
             <h1 class="mb-4">Don't write a single line of code<br><span style="color: var(--accent-color); font-weight: 400;">Until you have a blueprint.</span></h1>
-            <div class="d-flex justify-content-center gap-3"><a href="#contact" class="btn btn-primary px-5 py-3">BOOK A STRATEGY SESSION</a></div>
+            <p class="lead mb-5" style="color: var(--text-muted); max-width: 800px; margin: 0 auto; font-size: 1.15rem; line-height: 1.6;">
+                I provide strategic certainty for founders and scale-ups.<br>
+                Define exactly <strong>what</strong> to build, before you burn cash on <strong>how</strong> to build it.
+            </p>
+            <div class="d-flex justify-content-center gap-3"><a href="#services" class="btn btn-primary px-5">VIEW SERVICES</a><a href="#contact" class="btn btn-outline-light px-5">SCHEDULE</a></div>
         </div>
     </header>
 
+    <section id="edge" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">THE STRATEGIC EDGE.</h2>
+            <div class="row justify-content-center"> 
+                <div class="col-md-6 mb-4">
+                    <div class="p-5 h-100 text-center card shadow-none" style="border-top: 3px solid var(--accent-color);">
+                        <h3 class="fw-bold mb-3 text-white">The Smart Way: <br><span style="color: var(--accent-color)">Plan First, Build Later</span></h3>
+                        <p style="color: var(--text-muted);">Think of me as the architect of a house. I draw the plans, I check the structure, and I calculate the costs <strong>before</strong> you hire the construction crew. It's 10x cheaper to fix a blueprint than to tear down a wall.</p>
+                        <div class="text-center mt-4"><i class="bi bi-compass display-4" style="color:var(--accent-color)!important"></i></div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                      <div class="p-5 h-100 text-center card shadow-none" style="border-top: 3px solid #4a5568;">
+                        <h3 class="fw-bold mb-3 text-white">The Wrong Way: <br><span style="color: #94a3b8">"Let's Just Start Coding"</span></h3>
+                        <p style="color: var(--text-muted);">Most startups skip the architecture. They hire developers immediately. The result? They build features nobody wants, run out of money halfway, and end up with "Spaghetti Code".</p>
+                        <div class="text-center mt-4"><i class="bi bi-dice-5 display-4" style="color: #4a5568;"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-5" style="background-color: #131b29;">
+        <div class="container py-lg-4">
+            <h2 class="text-center mb-5 display-5">THE ARCHITECT.</h2>
+            <div class="row align-items-start gx-5">
+                <div class="col-lg-3 text-center mb-4 text-lg-end"><div class="profile-img-circle-container d-inline-block"><img src="profile.jpg" alt="Keren" class="profile-img-circle"></div></div>
+                <div class="col-lg-9 ps-lg-5"> 
+                    <span style="color: var(--accent-color); font-weight: 700; letter-spacing: 2px;">HI, I'M KEREN</span>
+                    <h2 class="fw-bold mt-3 mb-4 text-white">I turn complex ideas into <span style="color: var(--accent-color);">execution-ready blueprints.</span></h2>
+                    <p class="mb-3" style="color: #a0aec0; font-size: 1.1rem;">With a background as a software engineer at Microsoft and a Product Manager at top-tier tech companies, I've seen too many startups fail because they started coding before they started thinking.</p>
+                    <p class="mb-5" style="color: #e2e8f0; line-height: 1.6; font-size: 1.1rem;">My job is to be the architect. I take your rough concepts, align them with your business goals, and structure them into a coherent, <strong>dev-ready plan</strong>. I don't just "manage" products—I architect the foundation so your team can build the right product, faster and with zero friction.</p>
+                    <div class="mt-2 pt-4 border-top border-secondary d-flex flex-wrap justify-content-center gap-4 text-center">
+                        <div class="stat-block"><span class="stat-num">7</span><span class="stat-title">DEV EXPERIENCE</span></div>
+                        <div class="stat-block"><span class="stat-num">10+</span><span class="stat-title">PM EXPERIENCE</span></div>
+                        <div class="stat-block" style="border:none"><span class="stat-num">3+</span><span class="stat-title">ENTREPRENEURSHIP</span></div>
+                        <div class="d-flex gap-4 align-items-center opacity-50"><i class="bi bi-microsoft fs-4"></i> Microsoft | ironSource</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-5" style="border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container-fluid px-lg-5 text-center">
+            <h2 class="display-5 mb-5 pt-3">MY SERVICES.</h2>
+
+            <div class="row g-4 mb-5">
+                <div class="col-xl-4 col-lg-12 mb-4">
+                    <div class="text-center mb-2"><span class="step-label">I LEARN</span></div>
+                    <div class="card p-4 arrow-step" style="border: 2px solid var(--accent-color);">
+                        <span class="badge-corner">MOST POPULAR</span><span class="time-corner">1 Session</span>
+                        <div class="text-center mt-3 mb-4"><i class="bi bi-lightning-charge-fill display-5" style="color:var(--accent-color)"></i><h3 class="text-white mt-2">THE DNA MAPPING</h3><p class="small text-white opacity-90">Intensive Whiteboard Workshop. Strategic Clarity. Zero Noise.</p></div>
+                        <div class="row gy-3 text-start">
+                            <div class="col-12 d-flex gap-3"><i class="bi bi-map text-primary fs-4" style="color:var(--accent-color)!important"></i><div><strong class="text-white d-block">Visual Mapping</strong><small class="text-white opacity-75">Full whiteboard architecture of the User Journey, identifying exactly where friction happens.</small></div></div>
+                            <div class="col-12 d-flex gap-3"><i class="bi bi-check-circle text-primary fs-4" style="color:var(--accent-color)!important"></i><div><strong class="text-white d-block">Validation Plan</strong><small class="text-white opacity-75">Designing a specific "No-Code" experiment to prove market demand before investing in development.</small></div></div>
+                            <div class="col-12 d-flex gap-3"><i class="bi bi-scissors text-primary fs-4" style="color:var(--accent-color)!important"></i><div><strong class="text-white d-block">Scope Prioritization</strong><small class="text-white opacity-75">Defining the absolute MVP: What we build now, and critically—what we throw into the icebox.</small></div></div>
+                        </div>
+                        <div class="deliverables-box">
+                            <p class="text-white fw-bold small text-center mb-3">YOU WALK AWAY WITH:</p>
+                            <ul class="list-unstyled mb-0 small text-white opacity-75 text-start">
+                                <li class="mb-2"><i class="bi bi-check2 me-2"></i> Full Whiteboard Blueprint</li>
+                                <li class="mb-2"><i class="bi bi-check2 me-2"></i> Immediate Validation Protocol</li>
+                                <li><i class="bi bi-check2 me-2"></i> Prioritized Feature Backlog</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn btn-primary w-100 py-3 mt-auto">DECODE MY PRODUCT DNA</a>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-12 mb-4">
+                    <div class="text-center mb-2"><span class="step-label">I PLAN</span></div>
+                    <div class="card p-4 arrow-step" style="border-top: 4px solid var(--accent-color);">
+                        <span class="badge-corner">FOR VENTURES</span><span class="time-corner">2 Sprints</span>
+                        <div class="text-center mt-3 mb-4"><i class="bi bi-box-seam display-5" style="color:var(--accent-color)"></i><h3 class="text-white mt-2">GENESIS ARCHITECTURE</h3><p class="small text-white opacity-90">Strategic foundation to launch fast.</p></div>
+                        <div class="row gy-4 mb-4 text-start">
+                            <div class="col-12 d-flex gap-3"><i class="bi bi-scissors text-primary fs-4" style="color:var(--accent-color)!important"></i><div><strong class="text-white">The "Money-Saver"</strong><small class="text-white opacity-75 d-block">Ruthlessly cutting 40% of unnecessary features.</small></div></div>
+                            <div class="col-12 d-flex gap-3"><i class="bi bi-diagram-3 text-primary fs-4" style="color:var(--accent-color)!important"></i><div><strong class="text-white">Logic Map</strong><small class="text-white opacity-75 d-block">Mapping every click, error state, and user flow.</small></div></div>
+                            <div class="col-12 d-flex gap-3"><i class="bi bi-grid-3x3 text-primary fs-4" style="color:var(--accent-color)!important"></i><div><strong class="text-white">Wireframes</strong><small class="text-white opacity-75 d-block">Precise structural schematics of how it works.</small></div></div>
+                            <div class="col-12 d-flex gap-3"><i class="bi bi-book text-primary fs-4" style="color:var(--accent-color)!important"></i><div><strong class="text-white">Dev Bible</strong><small class="text-white opacity-75 d-block">Clear instructions manual, not a riddle.</small></div></div>
+                        </div>
+                        <a href="#contact" class="btn btn-primary w-100 py-3 mt-auto">CREATE MY EXECUTION BLUEPRINT</a>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-12 mb-4">
+                    <div class="text-center mb-2"><span class="step-label">I BUILD</span></div>
+                    <div class="card p-4 text-center" style="border: 2px dashed var(--accent-color); display: flex; flex-direction: column;">
+                        <span class="badge-corner">PREMIUM BETA</span><span class="time-corner">Rapid Build</span>
+                        <div class="mb-4 mt-4"><i class="bi bi-cpu display-5" style="color:var(--accent-color)"></i><h3 class="text-white mt-2">RAPID PROTOTYPING</h3></div>
+                        <div style="margin-top: -20px; margin-bottom: auto;">
+                            <p class="small text-white opacity-90 mb-4">Functional validation model in record time built directly from your blueprint.</p>
+                            <a href="#contact" class="btn btn-primary w-100 py-3">START BUILDING</a>
+                            <p class="small text-white opacity-75 mt-4">Currently running a premium beta.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-5"></div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-xl-5 col-lg-12 mb-4">
+                    <div class="text-center mb-2"><span class="step-label">I LEARN, I PLAN</span></div>
+                    <div class="card p-5 surgical-arrow-fix" style="border-top: 4px solid #4a90e2;">
+                        <span class="badge-corner" style="color:#4a90e2!important; border-color:#4a90e2">OPTIMIZATION</span><span class="time-corner">2 Sprints</span>
+                        <div class="text-center mt-3 mb-4"><i class="bi bi-heart-pulse display-5" style="color:#4a90e2"></i><h3 class="text-white mt-2">SURGICAL OPTIMIZATION</h3></div>
+                        <p class="small text-white opacity-90 text-start">Your product is leaking users. I find the leak and plug it with precise design logic.</p>
+                        <div class="row gy-3 mb-4 text-start">
+                            <div class="col-12 d-flex gap-3"><i class="bi bi-activity fs-4 mt-1" style="color:#4a90e2"></i><div><strong class="text-white">MRI Scan (Audit)</strong><small class="text-white opacity-75 d-block">Diagnosing exactly where users get stuck.</small></div></div>
+                            <div class="col-12 d-flex gap-3"><i class="bi bi-cone-striped fs-4 mt-1" style="color:#4a90e2"></i><div><strong class="text-white">Friction Removal</strong><small class="text-white opacity-75 d-block">Eliminating confused steps that kill conversion.</small></div></div>
+                            <div class="col-12 d-flex gap-3"><i class="bi bi-arrow-repeat fs-4 mt-1" style="color:#4a90e2"></i><div><strong class="text-white">Flow Redesign</strong><small class="text-white opacity-75 d-block">Rebuilding the logic of critical screens.</small></div></div>
+                            <div class="col-12 d-flex gap-3"><i class="bi bi-tools fs-4 mt-1" style="color:#4a90e2"></i><div><strong class="text-white">The Fix Kit</strong><small class="text-white opacity-75 d-block">Ready-to-implement updates for immediate deploy.</small></div></div>
+                        </div>
+                        <a href="#contact" class="btn btn-primary w-100 py-3 mt-auto">EXPOSE MY CRITICAL RISKS</a>
+                    </div>
+                </div>
+
+                <div class="col-xl-5 col-lg-12 mb-4">
+                    <div class="text-center mb-2"><span class="step-label">YOU BUILD</span></div>
+                    <div class="card p-5">
+                        <div class="text-center mt-3 mb-4"><i class="bi bi-buildings display-5" style="color:#4a90e2"></i><h3 class="text-white mt-3">EXTERNAL STUDIO</h3></div>
+                        <p class="small text-white opacity-90 mb-5 text-center">You receive the full Blueprint & Dev Bible. Now you can hand it to any developer, and they will know exactly what to do.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">READY TO START? <br><span style="color: var(--accent-color); font-size: 1.2rem;">Pick a time that works for you.</span></h2>
+            <h2 class="text-center mb-4">READY TO START?</h2>
             <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="calendly-container shadow-lg">
-                        <div class="calendly-inline-widget" data-url="https://calendly.com/lumioproductlab/30min?background_color=0f1623&text_color=f1f5f9&primary_color=d4c291" style="min-width:320px;height:700px;"></div>
+                <div class="col-md-7">
+                    <div class="p-4 rounded-3 card shadow"> 
+                        <div class="calendly-inline-widget" data-url="https://calendly.com/lumioproductlab/30min?background_color=162301&text_color=d4c291" style="min-width:320px;height:700px;"></div>
                         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                        <div class="text-center border-top border-secondary pt-4 mt-4">
+                            <h3 class="text-white mb-4" style="font-size: 1.5rem; letter-spacing: 2px;">LET'S TALK</h3>
+                            <div class="contact-details d-flex justify-content-center flex-wrap gap-5">
+                                <div class="contact-item">
+                                    <i class="bi bi-envelope text-primary" style="font-size: 1.2rem; margin-right: 8px;"></i>
+                                    <a href="mailto:lumioproductlab@gmail.com" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Email Me</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="bi bi-calendar-check text-primary" style="font-size: 1.2rem; margin-right: 8px;"></i>
+                                    <a href="https://calendly.com/keren-kalev" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Schedule a Call</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="bi bi-linkedin text-primary" style="font-size: 1.2rem; margin-right: 8px;"></i>
+                                    <a href="https://www.linkedin.com/company/keren-kalev-levy-group" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">LinkedIn</a>
+                                </div>
+                            </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="py-4 text-center border-top border-secondary">
-        <small class="text-muted">&copy; 2026 Lumio Product Lab. All Rights Reserved.</small>
+        <small class="text-muted">&copy; 2025 Lumio Product Lab. All Rights Reserved.</small>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
