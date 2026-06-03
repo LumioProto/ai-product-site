@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Lumio Product Lab - Strategic Proposal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-site: #000000;
+            --card-bg: #0a0a0a;
+            --accent-purple: #a855f7;
+            --accent-blue: #00f3ff;
+            --text-main: #ffffff;
+            --text-dim: #a1a1aa;
+            --border-color: #27272a;
+        }
+
+        * { box-sizing: border-box; -webkit-print-color-adjust: exact; }
+
+        body {
+            font-family: 'Assistant', sans-serif;
+            margin: 0; padding: 0;
+            background-color: #1a1a1a;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 10px auto;
+            background: var(--bg-site);
+            background-image: 
+                linear-gradient(rgba(39, 39, 42, 0.2) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(39, 39, 42, 0.2) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: var(--text-main);
+            position: relative;
+            page-break-after: always;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .page::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none; 
+        }
+
+        .hero-container {
+            width: 100%; height: 420px;
+            overflow: hidden; border-bottom: 3px solid var(--accent-purple);
+        }
+
+        .hero-img { width: 100%; height: 100%; object-fit: cover; }
+
+        .content-padding { padding: 15mm 22mm; position: relative; z-index: 2; }
+
+        .logo-img { max-width: 130px; height: auto; display: block; margin-bottom: 25px; }
+
+        h1 { font-size: 52px; font-weight: 700; margin: 0; line-height: 1.1; letter-spacing: -1px; }
+        h2 { font-size: 32px; color: white; font-weight: 700; margin-bottom: 25px; border-right: 4px solid var(--accent-purple); padding-right: 15px; }
+        
+        .phase-tag {
+            color: var(--accent-purple);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin: 30px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .phase-tag::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--accent-purple), transparent);
+        }
+
+        .blueprint-flow { position: relative; margin-top: 10px; }
+        
+        .blueprint-flow::before {
+            content: ""; position: absolute; right: 25px; top: 10px; bottom: 30px;
+            width: 2px; 
+            background-image: linear-gradient(to bottom, var(--accent-blue) 50%, transparent 50%);
+            background-size: 2px 12px;
+            opacity: 0.4;
+        }
+
+        .step-block { position: relative; margin-bottom: 20px; padding-right: 65px; }
+
+        .step-node {
+            position: absolute; right: 10px; top: 10px; width: 32px; height: 32px;
+            background: var(--bg-site); border: 2px solid var(--accent-blue);
+            border-radius: 4px; display: flex; align-items: center; justify-content: center;
+            font-size: 12px; font-weight: 700; color: var(--accent-blue);
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); z-index: 5;
+        }
+
+        .step-content { 
+            background: rgba(5, 5, 5, 0.95); 
+            border: 1px solid var(--border-color); 
+            padding: 16px 20px; border-radius: 6px;
+            position: relative;
+        }
+
+        .step-title { color: white; font-size: 18px; font-weight: 700; display: block; margin-bottom: 5px; }
+        .step-outcome { 
+            margin-top: 8px; display: block; color: var(--accent-blue); 
+            font-size: 14px; font-weight: 700; border-top: 1px solid rgba(0, 243, 255, 0.1); 
+            padding-top: 6px; text-transform: uppercase;
+        }
+
+        .highlight-card {
+            background: rgba(10, 10, 10, 0.9);
+            border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 30px; margin: 30px 0;
+        }
+
+        .impact-box {
+            text-align: center; border: 1px solid var(--accent-purple); border-radius: 16px;
+            padding: 40px; margin-top: 30px;
+        }
+        .impact-stat { font-size: 65px; font-weight: 700; color: white; }
+
+        .footer-info {
+            position: absolute; bottom: 60px; left: 0; width: 100%;
+            display: flex; flex-direction: column; align-items: center; gap: 20px;
+        }
+        .footer-links { font-size: 26px; display: flex; align-items: center; gap: 15px; }
+        .footer-links a { color: var(--accent-purple); text-decoration: none; font-weight: 700; }
+
+        ul.pro-list { list-style: none; padding: 0; }
+        ul.pro-list li { margin-bottom: 12px; padding-right: 25px; position: relative; color: var(--text-dim); font-size: 18px; }
+        ul.pro-list li::before { content: "▹"; position: absolute; right: 0; color: var(--accent-purple); }
+
+        @media print { body { background: none; } .page { margin: 0; border: none; } }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <div class="hero-container">
+        <img src="cover.jpg" alt="Cover Image" class="hero-img">
+    </div>
+    <div class="content-padding" style="margin-top: 50px;">
+        <img src="logo.png" alt="Lumio Logo" class="logo-img">
+        <h1>Product Lab:<br>מפת דרכים אסטרטגית</h1>
+        <div style="font-size: 26px; color: var(--accent-purple); margin-top: 15px;">בניית Lean MVP ותוכנית עבודה מבוססת ניסוי</div>
+        <p style="letter-spacing: 4px; font-size: 14px; text-transform: uppercase; color: var(--text-dim); margin-top: 40px; margin-bottom: 40px;">Clarity before code</p>
+        
+        <div style="border: 2px solid var(--accent-purple); background: rgba(168, 85, 247, 0.05); border-radius: 8px; padding: 25px; text-align: center; max-width: 90%; margin: 0 auto;">
+            <div style="font-size: 21px; font-weight: 700; color: #ffffff; margin-bottom: 8px; direction: ltr;">
+                Most MVPs don’t fail because of bad execution;
+            </div>
+            <div style="font-size: 21px; font-weight: 700; color: var(--accent-purple); direction: ltr;">
+                They fail because they test the wrong idea.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <div class="content-padding">
+        <h2 style="margin-top: 30px;">הסיכון בשלב ה-Pre-Seed</h2>
+        <p>בניית מוצר רחב מדי היא הטעות היקרה ביותר שיזמים עושים. זה מוביל לשריפת תקציב ואיבוד חלון ההזדמנויות בשוק.</p>
+        <div class="highlight-card">
+            <h3 style="color: white; margin-bottom: 15px; text-transform: uppercase;">למה מיזמים נכשלים בשלב הפיתוח?</h3>
+            <ul class="pro-list">
+                <li><b>בניית יתר (Over-engineering):</b> השקעה בפיצ'רים שאף אחד לא ביקש.</li>
+                <li><b>חוסר במדדים:</b> השקה ללא יכולת להוכיח למשקיעים שהמוצר עובד.</li>
+                <li><b>בזבוז זמן:</b> פיתוח איטי מדי ששורף את ה-Runway של המיזם.</li>
+            </ul>
+        </div>
+        <div class="highlight-card" style="border-right: 4px solid var(--accent-purple); background: transparent;">
+            <b style="font-size: 22px; display: block; margin-bottom: 10px;">הערך של Lumio</b>
+            <p>אנחנו יוצרים <b>תשתית מוצרית נקייה</b>. אנחנו מתכננים את המסלול שמוכיח את המודל העסקי וחוסך 50% מזמן הפיתוח המבוזבז.</p>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <div class="content-padding">
+        <h2 style="border-color: var(--accent-blue); color: var(--accent-blue);">תוכנית העבודה</h2>
+        
+        <div class="phase-tag">Phase 1: Planning for Build</div>
+        <div class="blueprint-flow">
+            <div class="step-block">
+                <div class="step-node">01</div>
+                <div class="step-content">
+                    <span class="step-title">ניתוח שוק וקהל יעד</span>
+                    <span style="color: var(--text-dim);">זיהוי המשתמשים שיש להם את <b>הצורך הדחוף</b> ביותר בפתרון.</span>
+                    <span class="step-outcome">תוצר: טירגוט משתמשים וניתוח חסמי כניסה.</span>
+                </div>
+            </div>
+            <div class="step-block">
+                <div class="step-node">02</div>
+                <div class="step-content">
+                    <span class="step-title">סדרי עדיפויות ופוקוס (Prioritization)</span>
+                    <span style="color: var(--text-dim);">הגדרת רשימת היכולות הקריטיות ביותר למעבר משלב הרעיון למוצר עובד.</span>
+                    <span class="step-outcome">תוצר: תוכנית פיתוח (Backlog) ממוקדת ROI.</span>
+                </div>
+            </div>
+            <div class="step-block">
+                <div class="step-node">03</div>
+                <div class="step-content">
+                    <span class="step-title">בדיקת היתכנות ומניעת כשלי תשתית</span>
+                    <span style="color: var(--text-dim);">וידוא שהבסיס הטכנולוגי תומך במוצר ומאפשר צמיחה ללא "חוב טכני" יקר.</span>
+                    <span class="step-outcome">תוצר: מפת סיכונים ודו"ח היתכנות טכנית.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="phase-tag" style="margin-top: 40px;">Phase 2: System for Measure & Learn</div>
+        <div class="blueprint-flow">
+            <div class="step-block">
+                <div class="step-node">04</div>
+                <div class="step-content">
+                    <span class="step-title">ניסוח היפותזות וניהול ולידציה</span>
+                    <span style="color: var(--text-dim);">זיהוי הנחות היסוד המסוכנות ביותר של המיזם ובניית מערך ניסויים להוכחתן.</span>
+                    <span class="step-outcome">תוצר: מערך בדיקה (Scorecard) מוכן להרצה בשטח.</span>
+                </div>
+            </div>
+            <div class="step-block">
+                <div class="step-node">05</div>
+                <div class="step-content">
+                    <span class="step-title">הגדרת מדדי הצלחה (Metrics)</span>
+                    <span style="color: var(--text-dim);">זיהוי המדדים שבאמת משנים (North Star) ויוכיחו למשקיעים שיש כאן ביזנס.</span>
+                    <span class="step-outcome">תוצר: מפת מדידה מבוססת נתונים.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <div class="content-padding">
+        <h2 style="margin-top: 20px;">מה מקבלים בסוף?</h2>
+        <ul class="pro-list" style="margin-top: 30px;">
+            <li><b>תוכנית עבודה לצוות הפיתוח:</b> רשימת משימות (Backlog) ברורה לביצוע מיידי.</li>
+            <li><b>מפת מסע לקוח (Flow-Map):</b> ויזואליזציה של הדרך הקצרה ביותר לערך עבור המשתמש.</li>
+            <li><b>מערך מבחני הוכחה:</b> ניסויים מדידים להוכחת כדאיות (Validation Scorecard).</li>
+            <li><b>סף ביצועים (Thresholds):</b> מדדים שקובעים מתי להמשיך להשקיע ומתי לשנות כיוון.</li>
+            <li><b>Roadmap למשקיעים:</b> תוכנית אסטרטגית משלב ה-MVP ועד לצמיחה.</li>
+        </ul>
+        <div class="impact-box">
+            <div class="impact-stat">30% - 50%</div>
+            <p style="text-transform: uppercase; letter-spacing: 2px; color: var(--accent-purple);">חסכון בזמן ומשאבי פיתוח מבוזבזים</p>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <div class="content-padding">
+        <h2 style="margin-top: 30px;">פחות ניחושים, יותר דאטה.</h2>
+        <p>בהובלת <b>קרן כלב-לוי</b>, אסטרטגית מוצר (Ex-Microsoft) המביאה ניסיון מחברות ענק, <b>מיקוד עסקי וקבלת החלטות מבוססת נתונים</b> לסטארטאפים בשלבים מוקדמים.</p>
+        <p style="color: var(--text-dim); margin-top: -10px;">לשעבר מנהלת מוצר באיירונסורס (ironSource) ומהנדסת תוכנה במיקרוסופט.</p>
+
+        <div class="highlight-card">
+            <h3 style="color: white;">למה עכשיו?</h3>
+            <p>משקיעים היום מחפשים <b>הוכחות בשטח</b> ולא רק מצגות. Lumio בונה לך את התשתית שמספקת את ההוכחות האלה.</p>
+        </div>
+
+        <div class="highlight-card" style="border: 1px solid var(--accent-purple);">
+            <h3 style="color: var(--accent-purple);">הצעה למצטרפים ראשונים</h3>
+            <p>בחירת <b>2-3 סטארטאפים</b> לסשן פיילוט בעלות סמלית. <b>המטרה: לבנות יחד קייס-סטאדי של הצלחה.</b></p>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <p style="font-size: 16px; color: white;"><b>רוצה להתקדם?</b></p>
+            <p style="font-size: 15px;">אם נמאס לך לבזבז זמן על פיתוח שלא מביא תוצאות – בוא נדבר.</p>
+        </div>
+
+        <div style="height: 150px;"></div>
+        
+        <div class="footer-info">
+            <img src="logo.png" alt="Lumio Small Logo" style="height: 55px; width: auto;">
+            <div class="footer-links">
+                <a href="mailto:LumioProductLab@gmail.com">צור קשר</a>
+                <span>|</span>
+                <a href="https://ai.sensiblabs.com">אתר Lumio</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lumio Product Lab - Strategic Proposal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-site: #000000;
+            --card-bg: #0a0a0a;
+            --accent-purple: #a855f7;
+            --accent-blue: #00f3ff;
+            --text-main: #ffffff;
+            --text-dim: #a1a1aa;
+            --border-color: #27272a;
+        }
+
+        * { box-sizing: border-box; -webkit-print-color-adjust: exact; }
+
+        body {
+            font-family: 'Assistant', sans-serif;
+            margin: 0; padding: 0;
+            background-color: #1a1a1a;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 10px auto;
+            background: var(--bg-site);
+            background-image: 
+                linear-gradient(rgba(39, 39, 42, 0.2) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(39, 39, 42, 0.2) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: var(--text-main);
+            position: relative;
+            page-break-after: always;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .page::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none; 
+        }
+
+        .hero-container {
+            width: 100%; height: 420px;
+            overflow: hidden; border-bottom: 3px solid var(--accent-purple);
+        }
+
+        .hero-img { width: 100%; height: 100%; object-fit: cover; }
+
+        .content-padding { padding: 15mm 22mm; position: relative; z-index: 2; }
+
+        .logo-img { max-width: 130px; height: auto; display: block; margin-bottom: 25px; }
+
+        h1 { font-size: 52px; font-weight: 700; margin: 0; line-height: 1.1; letter-spacing: -1px; }
+        h2 { font-size: 32px; color: white; font-weight: 700; margin-bottom: 25px; border-left: 4px solid var(--accent-purple); padding-left: 15px; }
+        
+        .highlight-card {
+            background: rgba(10, 10, 10, 0.9);
+            border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 30px; margin: 30px 0;
+        }
+
+        .blueprint-flow { position: relative; margin-top: 40px; }
+        
+        .blueprint-flow::before {
+            content: ""; position: absolute; left: 25px; top: 10px; bottom: 30px;
+            width: 2px; 
+            background-image: linear-gradient(to bottom, var(--accent-blue) 50%, transparent 50%);
+            background-size: 2px 12px;
+            opacity: 0.4;
+        }
+
+        .step-block { position: relative; margin-bottom: 25px; padding-left: 65px; }
+
+        .step-node {
+            position: absolute; left: 10px; top: 10px; width: 32px; height: 32px;
+            background: var(--bg-site); border: 2px solid var(--accent-blue);
+            border-radius: 4px; display: flex; align-items: center; justify-content: center;
+            font-size: 12px; font-weight: 700; color: var(--accent-blue);
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); z-index: 5;
+        }
+
+        .step-content { 
+            background: rgba(5, 5, 5, 0.95); 
+            border: 1px solid var(--border-color); 
+            padding: 18px 22px; border-radius: 6px;
+            position: relative;
+        }
+        
+        .step-content::before {
+            content: ""; position: absolute; left: -40px; top: 25px;
+            width: 40px; height: 1px; background: var(--border-color); opacity: 0.5;
+        }
+
+        .step-title { color: white; font-size: 19px; font-weight: 700; display: block; margin-bottom: 5px; }
+        .step-outcome { 
+            margin-top: 10px; display: block; color: var(--accent-blue); 
+            font-size: 15px; font-weight: 700; border-top: 1px solid rgba(0, 243, 255, 0.1); 
+            padding-top: 8px; text-transform: uppercase;
+        }
+
+        .impact-box {
+            text-align: center; border: 1px solid var(--accent-purple); border-radius: 16px;
+            padding: 40px; margin-top: 30px;
+        }
+        .impact-stat { font-size: 65px; font-weight: 700; color: white; }
+
+        .footer-info {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            z-index: 100;
+        }
+
+        .footer-links {
+            font-size: 26px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+            transform: translateY(-3px);
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        }
+
+        .footer-links span {
+            color: #444;
+            font-weight: 200;
+        }
+
+        ul.pro-list { list-style: none; padding: 0; }
+        ul.pro-list li { margin-bottom: 12px; padding-left: 25px; position: relative; color: var(--text-dim); font-size: 18px; }
+        ul.pro-list li::before { content: "▹"; position: absolute; left: 0; color: var(--accent-purple); }
+
+        @media print {
+            body { background: none; }
+            .page { margin: 0; border: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <div class="hero-container">
+        <img src="cover.jpg" alt="Cover Image" class="hero-img">
+    </div>
+    <div class="content-padding" style="margin-top: 50px;">
+        <img src="logo.png" alt="Lumio Logo" class="logo-img">
+        <h1>Product Lab:<br>DNA Mapping Session</h1>
+        <div style="font-size: 26px; color: var(--accent-purple); margin-top: 15px;">Distilling Lean MVPs & Strategic Blueprints</div>
+        <p style="letter-spacing: 4px; font-size: 14px; text-transform: uppercase; color: var(--text-dim); margin-top: 40px; margin-bottom: 40px;">Clarity before code</p>
+        
+        <!-- Centered purple box with 50px margin-top space added -->
+        <div style="border: 2px solid var(--accent-purple); background: rgba(168, 85, 247, 0.05); border-radius: 8px; padding: 25px; text-align: center; max-width: 90%; margin: 50px auto 0 auto; direction: ltr;">
+            <div style="font-size: 21px; font-weight: 700; color: #ffffff; margin-bottom: 8px;">
+                Most MVPs don’t fail because of bad execution;
+            </div>
+            <div style="font-size: 21px; font-weight: 700; color: var(--accent-purple);">
+                They fail because they test the wrong idea.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <div class="content-padding">
+        <h2 style="margin-top: 30px;">The Pre-Seed Gap</h2>
+        <p>Building a broad MVP is the most expensive mistake early-stage founders make. It leads to burnt budgets and lost market windows.</p>
+        <div class="highlight-card">
+            <h3 style="color: white; margin-bottom: 15px; text-transform: uppercase;">Key MVP Pitfalls</h3>
+            <ul class="pro-list">
+                <li><b>Feature Bloat:</b> Building "nice-to-have" features that obscure the core value proposition.</li>
+                <li><b>Data Blindness:</b> Launching without a framework to measure if users actually care.</li>
+                <li><b>Scalability Prematurity:</b> Over-engineering for 1M users before validating the first 100.</li>
+            </ul>
+        </div>
+        <div class="highlight-card" style="border-left: 4px solid var(--accent-purple); background: transparent;">
+            <b style="font-size: 22px; display: block; margin-bottom: 10px;">The Lumio Solution</b>
+            <p>We perform a <b>surgical extraction</b> of your vision. We design a <b>Validation Engine</b> that proves your business case while saving 50% of dev time.</p>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <div class="content-padding">
+        <h2 style="border-color: var(--accent-blue); color: var(--accent-blue);">DNA Mapping Journey</h2>
+        <div class="blueprint-flow">
+            <div class="step-block">
+                <div class="step-node">01</div>
+                <div class="step-content">
+                    <span class="step-title">Market Compass</span>
+                    <span style="color: var(--text-dim);">Identifying the Extreme User (the one with the <b>critical need</b>).</span>
+                    <span class="step-outcome">OUTCOME: Precise targeting & Switching Cost analysis.</span>
+                </div>
+            </div>
+            <div class="step-block">
+                <div class="step-node">02</div>
+                <div class="step-content">
+                    <span class="step-title">Structural Extraction</span>
+                    <span style="color: var(--text-dim);">Microsoft-grade audit of architecture, technical <b>dependencies</b>, and integrity.</span>
+                    <span class="step-outcome">OUTCOME: Risk map & technical feasibility report.</span>
+                </div>
+            </div>
+            <div class="step-block">
+                <div class="step-node">03</div>
+                <div class="step-content">
+                    <span class="step-title">The Lean Scalpel</span>
+                    <span style="color: var(--text-dim);">Aggressive prioritization using Cost of Delay to define the leanest path to value.</span>
+                    <span class="step-outcome">OUTCOME: P0 Backlog with "Must-Win" features.</span>
+                </div>
+            </div>
+            <div class="step-block">
+                <div class="step-node">04</div>
+                <div class="step-content">
+                    <span class="step-title">AI Strategy Integration</span>
+                    <span style="color: var(--text-dim);">Deep dive into the AI-Data feedback loop and strategic moat development.</span>
+                    <span class="step-outcome">OUTCOME: AI Moat identification vs. Cost analysis.</span>
+                </div>
+            </div>
+            <div class="step-block">
+                <div class="step-node">05</div>
+                <div class="step-content">
+                    <span class="step-title">Analytics DNA</span>
+                    <span style="color: var(--text-dim);">Defining the North Star Metric and establishing a framework for evidence-based growth.</span>
+                    <span class="step-outcome">OUTCOME: Evidence-Based tracking blueprint.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <div class="content-padding">
+        <h2 style="margin-top: 20px;">The Deliverables</h2>
+        <ul class="pro-list" style="margin-top: 30px;">
+            <li><b>Surgically Trimmed Backlog:</b> A P0/P1 list that developers can actually execute.</li>
+            <li><b>Critical Path Flow-Map:</b> Visualizing the fastest route to the "Aha! Moment".</li>
+            <li><b>Validation Experiment Scorecard:</b> Defined tests and measurable experiments to prove ROI.</li>
+            <li><b>Performance Thresholds:</b> Pre-defined metrics that signal when to pivot or stop investing.</li>
+            <li><b>Investor Ready Roadmap:</b> Strategic bridge from MVP to V1.</li>
+        </ul>
+        <div class="impact-box">
+            <div class="impact-stat">30% - 50%</div>
+            <p style="text-transform: uppercase; letter-spacing: 2px; color: var(--accent-purple);">Reduction in wasted development resources</p>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <div class="content-padding">
+        <h2 style="margin-top: 30px;">The Expertise Behind Lumio</h2>
+        <p>Led by <b>Keren Kelev-Levy</b>, a Product Strategist (Ex-Microsoft) bringing Big-Tech discipline, <b>clear strategic focus and evidence-based decision making</b> to early-stage startups.</p>
+
+        <div class="highlight-card">
+            <h3 style="color: white;">Why Now?</h3>
+            <p>In the current climate, investors want <b>validated evidence</b>. Lumio ensures your MVP is built to provide exactly that.</p>
+        </div>
+
+        <div class="highlight-card" style="border: 1px solid var(--accent-purple);">
+            <h3 style="color: var(--accent-purple);">The Early Adopter Offer</h3>
+            <p>Selecting <b>2-3 startups</b> for an exclusive pilot session at a symbolic cost. Creating proven success stories through Clarity.</p>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <p style="font-size: 16px; color: var(--white);"><b>Questions?</b></p>
+            <p style="font-size: 15px;">We focus on speed, logic, and market-fit. If you want to build with precision, let's talk.</p>
+        </div>
+
+        <div style="height: 200px;"></div>
+        
+        <div class="footer-info">
+            <img src="logo.png" alt="Lumio Small Logo" style="height: 55px; width: auto;">
+            <div class="footer-links">
+                <a href="mailto:LumioProductLab@gmail.com">Contact Us</a>
+                <span>|</span>
+                <a href="https://ai.sensiblabs.com">Lumio Website</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
